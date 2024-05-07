@@ -1,4 +1,5 @@
-import Link from "next/link";
+import AccountLink from "./components/account-link";
+import { Github, Linkedin, Twitter } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -9,16 +10,10 @@ export default function Home() {
       <div className="text-8xl mt-4 font-dancing">
         Palash Jhaveri
       </div>
-      <div className="mt-4">
-        <Link href={"https://www.linkedin.com/in/palash-jhaveri/"} rel="noopener noreferrer" target="_blank" className="p-2 rounded-lg hover:bg-slate-700">
-          LinkedIn
-        </Link>
-        <Link href={"https://github.com/Pal8304"} rel="noopener noreferrer" target="_blank" className="p-2 rounded-lg hover:bg-slate-700">
-          Github
-        </Link>
-        <Link href={"https://twitter.com/PalJ_08"} rel="noopener noreferrer" target="_blank" className="p-2 rounded-lg hover:bg-slate-700">
-          Twitter
-        </Link>
+      <div className="mt-4 gap-8 flex flex-row">
+        <AccountLink externalLink="https://github.com/Pal8304" icon= {<Github size={32} />} />
+        <AccountLink externalLink="https://www.linkedin.com/in/palash-jhaveri/" icon={<Linkedin size={32} />} />
+        <AccountLink externalLink="https://twitter.com/PalJ_08" icon={<Twitter size={32} />} />
       </div>
     </div>
   );
