@@ -1,10 +1,13 @@
 import CodingProfileLink from "../components/coding-profile-link";
 export default function CodingProfile() {
   return (
-    <div className="flex flex-col items-center justify-center w-2/3 h-screen">
+    <div className="flex flex-col items-left justify-center w-2/3 h-screen ml-10 gap-4">
       <div>
-        <div className="text-4xl font-bold justify-items-center items-center m-6">
+        <div className="text-6xl font-semibold justify-items-center items-center ml-6">
           Coding Profiles
+        </div>
+        <div className="text-2xl opacity-50 ml-6">
+          My competitive programming profiles
         </div>
       </div>
       <div className="flex flex-wrap">

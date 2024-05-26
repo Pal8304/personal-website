@@ -48,29 +48,29 @@ export default function Navbar() {
                 className="m-4 border-2 rounded-md p-2 bg-slate-800"
               >
                 {" "}
-                Coding Profile{" "}
+                Coding Profiles{" "}
               </Link>
             ) : (
               <Link href="/coding-profile" className="m-4">
                 {" "}
-                Coding Profile{" "}
+                Coding Profiles{" "}
               </Link>
             )}
-            {currentPath == "/blog" ? (
+            {currentPath == "/blogs" ? (
               <Link
-                href="/blog"
+                href="/blogs"
                 className="m-4 border-2 rounded-md p-2 bg-slate-800"
               >
                 {" "}
                 Blog{" "}
               </Link>
             ) : (
-              <Link href="/blog" className="m-4">
+              <Link href="/blogs" className="m-4">
                 {" "}
                 Blog{" "}
               </Link>
             )}
-            {currentPath == "/contact" ? (
+            {/* {currentPath == "/contact" ? (
               <Link
                 href="/contact"
                 className="m-4 border-2 rounded-md p-2 bg-slate-800"
@@ -83,7 +83,7 @@ export default function Navbar() {
                 {" "}
                 Contact{" "}
               </Link>
-            )}
+            )} */}
           </div>
         </div>
       </nav>

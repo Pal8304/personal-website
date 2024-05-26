@@ -3,7 +3,12 @@ import ProjectCard from "../components/project-card";
 export default function Project() {
   return (
     <div className="text-2xl flex flex-col items-left justify-center h-screen gap-4 ml-16 w-2/3">
-      <div className="text-6xl mb-4">My Projects</div>
+      <div className="flex flex-col justify-center mb-4">
+        <div className="text-6xl mb-1">My Projects</div>
+        <div className="text-2xl opacity-50">
+          The debacles that I create when an idea hits me
+        </div>
+      </div>
       <div className="flex flex-wrap gap-4 overflow-auto">
         <ProjectCard
           deployLink="https://scheduling-algorithms-rnud.vercel.app/"
