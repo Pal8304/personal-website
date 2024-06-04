@@ -15,59 +15,51 @@ export default function Navbar() {
           </div>
           <div className="p-4">
             {currentPath == "/" ? (
-              <Link
-                href="/"
-                className="m-4 border-2 rounded-md p-2 bg-slate-800"
-              >
-                {" "}
-                About{" "}
+              <Link href="/" className="m-4 opacity-100">
+                About
               </Link>
             ) : (
-              <Link href="/" className="m-4">
-                {" "}
-                About{" "}
+              <Link
+                href="/"
+                className="m-4 opacity-50 before:absolute before:opacity-0 before:translate-x-[-20px] before:transition-all duration-300 after:opacity-0 after:absolute after:translate-x-[5px] after:transition-all before:content-['<'] after:content-['/>'] hover:before:opacity-100 hover:after:opacity-100 hover:opacity-100 hover:before:translate-x-[-15px] hover:after:translate-x-0"
+              >
+                About
               </Link>
             )}
             {currentPath == "/projects" ? (
-              <Link
-                href="/projects"
-                className="m-4 border-2 rounded-md p-2 bg-slate-800"
-              >
-                {" "}
-                Projects{" "}
+              <Link href="/projects" className="m-4 opacity-100">
+                Projects
               </Link>
             ) : (
-              <Link href="/projects" className="m-4">
-                {" "}
-                Projects{" "}
+              <Link
+                href="/projects"
+                className="m-4 opacity-50 before:absolute before:opacity-0 before:translate-x-[-20px] before:transition-all duration-300 after:opacity-0 after:absolute after:translate-x-[5px] after:transition-all before:content-['<'] after:content-['/>'] hover:before:opacity-100 hover:after:opacity-100 hover:opacity-100 hover:before:translate-x-[-15px] hover:after:translate-x-0"
+              >
+                Projects
               </Link>
             )}
             {currentPath == "/coding-profile" ? (
-              <Link
-                href="/coding-profile"
-                className="m-4 border-2 rounded-md p-2 bg-slate-800"
-              >
-                {" "}
-                Coding Profiles{" "}
+              <Link href="/coding-profile" className="m-4 opacity-100">
+                Coding Profiles
               </Link>
             ) : (
-              <Link href="/coding-profile" className="m-4">
-                {" "}
-                Coding Profiles{" "}
+              <Link
+                href="/coding-profile"
+                className="m-4 opacity-50 before:absolute before:opacity-0 before:translate-x-[-20px] before:transition-all duration-300 after:opacity-0 after:absolute after:translate-x-[5px] after:transition-all before:content-['<'] after:content-['/>'] hover:before:opacity-100 hover:after:opacity-100 hover:opacity-100 hover:before:translate-x-[-15px] hover:after:translate-x-0"
+              >
+                Coding Profiles
               </Link>
             )}
             {currentPath == "/blogs" ? (
-              <Link
-                href="/blogs"
-                className="m-4 border-2 rounded-md p-2 bg-slate-800"
-              >
-                {" "}
-                Blog{" "}
+              <Link href="/blogs" className="m-4 opacity-100">
+                Blog
               </Link>
             ) : (
-              <Link href="/blogs" className="m-4">
-                {" "}
-                Blog{" "}
+              <Link
+                href="/blogs"
+                className="m-4 opacity-50 before:absolute before:opacity-0 before:translate-x-[-20px] before:transition-all duration-300 after:opacity-0 after:absolute after:translate-x-[5px] after:transition-all before:content-['<'] after:content-['/>'] hover:before:opacity-100 hover:after:opacity-100 hover:opacity-100 hover:before:translate-x-[-15px] hover:after:translate-x-0"
+              >
+                Blog
               </Link>
             )}
             {/* {currentPath == "/contact" ? (
@@ -75,13 +67,13 @@ export default function Navbar() {
                 href="/contact"
                 className="m-4 border-2 rounded-md p-2 bg-slate-800"
               >
-                {" "}
-                Contact{" "}
+                
+                Contact
               </Link>
             ) : (
               <Link href="/contact" className="m-4">
-                {" "}
-                Contact{" "}
+                
+                Contact
               </Link>
             )} */}
           </div>
