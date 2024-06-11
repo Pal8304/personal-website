@@ -1,11 +1,8 @@
 import React from "react";
 import Link from "next/link";
-interface AccountLinkProps {
-  externalLink: string;
-  icon: React.ReactNode;
-}
+import { AccountLinkProps } from "@/data/types";
 
-export default function AccountLink({ externalLink, icon }: AccountLinkProps) {
+export default function AccountLink({ externalLink, Icon }: AccountLinkProps) {
   return (
     <div className="flex rounded-full hover:bg-slate-700">
       <Link
@@ -14,7 +11,7 @@ export default function AccountLink({ externalLink, icon }: AccountLinkProps) {
         target="_blank"
         className="p-2"
       >
-        {icon}
+        <Icon size={32}/>
       </Link>
     </div>
   );

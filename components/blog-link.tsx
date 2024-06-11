@@ -1,10 +1,6 @@
 import Link from "next/link"
 
-interface BlogLinkProps{
-    blogtitle: string;
-    blogurl: string;
-    blogdate: string;
-}
+import { BlogLinkProps } from "@/data/types"
 
 export default function BlogLink({blogtitle,blogurl,blogdate} : BlogLinkProps){
     return (

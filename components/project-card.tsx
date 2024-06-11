@@ -1,12 +1,6 @@
 import Link from "next/link";
 
-interface ProjectCardProps {
-  githubLink: string;
-  deployLink: string;
-  title: string;
-  description: string;
-  tags: string[];
-}
+import { ProjectCardProps } from "@/data/types";
 
 export default function ProjectCard({
   deployLink,

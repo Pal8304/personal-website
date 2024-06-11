@@ -1,13 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-interface CodingProfileLinkProps {
-  handle: string;
-  codingPlatform: string;
-  codingProfileLink: string;
-  iconPath: string;
-  maxRating: number;
-  highestTag: string;
-}
+import { CodingProfileLinkProps } from "@/data/types";
 
 export default function CodingProfileLink({
   handle,

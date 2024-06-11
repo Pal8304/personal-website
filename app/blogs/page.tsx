@@ -1,4 +1,4 @@
-import BlogLink from "../components/blog-link";
+import BlogLink from "../../components/blog-link";
 export default function Blog() {
   return (
     <div className="font-mono flex flex-col items-start justify-center w-screen h-screen gap-2 ml-12">

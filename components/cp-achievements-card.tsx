@@ -1,12 +1,7 @@
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 
-interface CPAchievementsCardProps {
-  event: string;
-  rank: string;
-  certificateLink: string;
-  description: string;
-}
+import { CPAchievementsCardProps } from "@/data/types";
 
 export default function CPAchievementsCard({
   event,
