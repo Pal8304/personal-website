@@ -3,7 +3,6 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 export default function Navbar() {
   const currentPath = usePathname();
-  console.log(currentPath);
   return (
     <div className="w-screen flex justify-center items-center mt-16">
       <nav className="fixed w-2/3 justify-center">
@@ -50,13 +49,13 @@ export default function Navbar() {
                 Coding Profiles
               </Link>
             )}
-            {currentPath == "/blogs" ? (
+            {currentPath == "/blog" ? (
               <Link href="/blogs" className="m-4 opacity-100">
                 Blog
               </Link>
             ) : (
               <Link
-                href="/blogs"
+                href="/blog"
                 className="m-4 opacity-50 before:absolute before:opacity-0 before:translate-x-[-20px] before:transition-all duration-300 after:opacity-0 after:absolute after:translate-x-[5px] after:transition-all before:content-['<'] after:content-['/>'] hover:before:opacity-100 hover:after:opacity-100 hover:opacity-100 hover:before:translate-x-[-15px] hover:after:translate-x-0"
               >
                 Blog

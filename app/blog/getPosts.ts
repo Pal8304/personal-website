@@ -1,0 +1,35 @@
+import matter from "gray-matter";
+import path from "path";
+import { Post } from "@/data/types";
+import fs from "fs/promises";
+import { cache } from "react";
+
+export const getPosts = cache(async () => {
+  const posts = await fs.readdir("./data/blogs");
+  posts.forEach((post) => {
+    console.log(post);
+  });
+  return Promise.all(
+    posts
+      .filter((file) => path.extname(file) === ".mdx")
+      .map(async (file) => {
+        const filePath = path.join("./data/blogs", file);
+        const postContent = await fs.readFile(filePath, "utf8");
+        const { data, content } = matter(postContent);
+        console.log(data);
+        return {
+          title: data.title,
+          date: data.date,
+          content,
+          slug: file.replace(/\.mdx$/, ""),
+        } as Post;
+      })
+  );
+});
+
+export async function getPost(slug: string) {
+  const posts = await getPosts();
+  return posts.find((post) => post.slug === slug);
+}
+
+export default getPosts;

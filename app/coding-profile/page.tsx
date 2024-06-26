@@ -1,7 +1,7 @@
 import { profile } from "console";
 import CodingProfileLink from "../../components/coding-profile-link";
 import CPAchievementsCard from "../../components/cp-achievements-card";
-import { CPACHIEVEMENTS, CODINGPROFILES } from "../../data/data";
+import { CPACHIEVEMENTS, CODINGPROFILES } from "../../data/constants";
 
 
 export default function CodingProfile() {

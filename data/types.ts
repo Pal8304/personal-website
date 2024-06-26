@@ -1,8 +1,6 @@
-import React from "react";
-import { LucideIcon, LucideProps } from "lucide-react";
+import { LucideIcon } from "lucide-react";
 export interface AccountLinkProps {
   externalLink: string;
-  //   icon: React.ForwardRefExoticComponent<Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>>,
   Icon: LucideIcon;
 }
 
@@ -34,4 +32,11 @@ export interface ProjectCardProps {
   title: string;
   description: string;
   tags: string[];
+}
+
+export interface Post {
+  title: string;
+  date: string;
+  content: string;
+  slug: string;
 }

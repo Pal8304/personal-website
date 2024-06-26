@@ -14,7 +14,7 @@ export default function ProjectCard({
       href={deployLink}
       rel="noopener noreferrer"
       target="_blank"
-      className="gap-1 rounded-md flex flex-col p-4 bg-slate-800 hover:bg-slate-700 border-2 border-slate-700 w-96 h-auto"
+      className="gap-1 rounded-md flex flex-col p-4 bg-slate-800 hover:bg-slate-700 border-2 border-slate-700 min-w-72 h-auto"
     >
       <div className="text-2xl">{title}</div>
       <div className="text-xl opacity-50 mb-4">{description}</div>

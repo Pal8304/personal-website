@@ -1,5 +1,5 @@
 import ProjectCard from "../../components/project-card";
-import { PROJECTS } from "@/data/data";
+import { PROJECTS } from "../../data/constants";
 export default function Project() {
   return (
     <div className="text-2xl flex flex-col items-left justify-center h-screen gap-4 ml-16 w-2/3">

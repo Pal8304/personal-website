@@ -1,5 +1,5 @@
 import AccountLink from "../components/account-link";
-import { SOCIALS } from "../data/data";
+import { SOCIALS } from "../data/constants";
 import { Github, Linkedin, Twitter } from 'lucide-react';
 
 export default function Home() {

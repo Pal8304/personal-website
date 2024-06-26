@@ -1,5 +1,10 @@
 import BlogLink from "../../components/blog-link";
+
+import getPosts from "./getPosts";
+
 export default function Blog() {
+  const posts = getPosts();
+  console.log(posts);
   return (
     <div className="font-mono flex flex-col items-start justify-center w-screen h-screen gap-2 ml-12">
       <div className="flex flex-col gap-2">
