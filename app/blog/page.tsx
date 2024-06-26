@@ -1,10 +1,17 @@
+import { time } from "console";
 import BlogLink from "../../components/blog-link";
 
-import getPosts from "./getPosts";
+import getPosts from "./get-posts";
 
-export default function Blog() {
-  const posts = getPosts();
-  console.log(posts);
+export default async function Blog() {
+  const blogs = await getPosts();
+  blogs.map((blog) => {
+    {
+      title: blog.title;
+      date: blog.date;
+      slug: blog.slug;
+    }
+  });
   return (
     <div className="font-mono flex flex-col items-start justify-center w-screen h-screen gap-2 ml-12">
       <div className="flex flex-col gap-2">
@@ -16,16 +23,16 @@ export default function Blog() {
         </div>
       </div>
       <div className="flex flex-col items-start justify-start gap-8 mt-8">
-        <BlogLink
-          blogtitle="Blog-1"
-          blogurl="/blogs/my-first-blog"
-          blogdate="2023-10-10"
-        />
-        <BlogLink
-          blogtitle="Blog-2"
-          blogurl="/blogs/my-second-blog"
-          blogdate="2023-10-10"
-        />
+        {blogs.map((blog, index) => {
+          return (
+            <BlogLink
+              key={index}
+              blogtitle={blog.title}
+              blogurl={`/blog/${blog.slug}`}
+              blogdate={blog.date}
+            />
+          );
+        })}
       </div>
     </div>
   );

@@ -6,9 +6,6 @@ import { cache } from "react";
 
 export const getPosts = cache(async () => {
   const posts = await fs.readdir("./data/blogs");
-  posts.forEach((post) => {
-    console.log(post);
-  });
   return Promise.all(
     posts
       .filter((file) => path.extname(file) === ".mdx")
@@ -16,11 +13,10 @@ export const getPosts = cache(async () => {
         const filePath = path.join("./data/blogs", file);
         const postContent = await fs.readFile(filePath, "utf8");
         const { data, content } = matter(postContent);
-        console.log(data);
         return {
-          title: data.title,
-          date: data.date,
-          content,
+          title: data.Title,
+          date: data.Date.toISOString().split("T")[0],
+          content: content,
           slug: file.replace(/\.mdx$/, ""),
         } as Post;
       })

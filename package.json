@@ -16,8 +16,15 @@
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.378.0",
     "next": "14.2.2",
+    "next-mdx-remote": "^5.0.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "rehype": "^13.0.1",
+    "rehype-autolink-headings": "^7.1.0",
+    "rehype-slug": "^6.0.0",
+    "remark": "^15.0.1",
+    "remark-gfm": "^4.0.0",
+    "remark-toc": "^9.0.0"
   },
   "devDependencies": {
     "typescript": "^5",
