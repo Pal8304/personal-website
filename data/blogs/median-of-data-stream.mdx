@@ -3,4 +3,45 @@ Title : Median of Data Stream
 Date : 2021-01-01
 ---
 
-# Median of Data Stream
+Let's think of a question :- 
+
+## Problem Statement
+
+We are given a stream of integers that are being added and removed from the stream one at a time. We need to find the median of the integers at any given point of time.
+
+## Solution
+
+### Approach 1 
+
+The first approach that come to mind is to keep the integers in a list and sort the list every time we need to find the median. This approach is not efficient as sorting the list will take O(nlogn) time. 
+
+``` cpp
+class MedianFinder {
+public:
+    /** initialize your data structure here. */
+    vector<int> data;
+    MedianFinder() {
+        
+    }
+    
+    void addNum(int num) {
+        data.push_back(num);
+    }
+    void removeNum(int num){
+        data.erase(remove(data.begin(), data.end(), num), data.end());
+    }
+    double findMedian() {
+        sort(data.begin(), data.end());
+        int n = data.size();
+        if(n%2 == 0){
+            return (data[n/2] + data[n/2 - 1])/2.0;
+        }
+        return data[n/2];
+    }
+};
+```
+
+### Approach 2
+
+The second approach (more optimised) is to use two heaps but using them we can only find the median when the integers are being added to the stream. We can't find the median when the integers are being removed from the stream. 
+

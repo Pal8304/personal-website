@@ -3,6 +3,8 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 export default function Navbar() {
   const currentPath = usePathname();
+  const validPaths = ["/", "/projects", "/coding-profile", "/blog"];
+  if(!validPaths.includes(currentPath)) return null;
   return (
     <div className="w-screen flex justify-center items-center mt-16">
       <nav className="fixed w-2/3 justify-center">
@@ -13,6 +15,7 @@ export default function Navbar() {
             </Link>
           </div>
           <div className="p-4">
+            {/* optimize this when you have time */}
             {currentPath == "/" ? (
               <Link href="/" className="m-4 opacity-100">
                 About
