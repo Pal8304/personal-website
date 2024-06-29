@@ -1,9 +1,9 @@
---- 
-Title : Median of Data Stream
-Date : 2021-01-01
+---
+Title: Median of Data Stream
+Date: 2021-01-01
 ---
 
-Let's think of a question :- 
+Let's think of a question :-
 
 ## Problem Statement
 
@@ -11,37 +11,117 @@ We are given a stream of integers that are being added and removed from the stre
 
 ## Solution
 
-### Approach 1 
+### Approach 1
 
-The first approach that come to mind is to keep the integers in a list and sort the list every time we need to find the median. This approach is not efficient as sorting the list will take O(nlogn) time. 
-
-``` cpp
-class MedianFinder {
-public:
-    /** initialize your data structure here. */
-    vector<int> data;
-    MedianFinder() {
-        
-    }
-    
-    void addNum(int num) {
-        data.push_back(num);
-    }
-    void removeNum(int num){
-        data.erase(remove(data.begin(), data.end(), num), data.end());
-    }
-    double findMedian() {
-        sort(data.begin(), data.end());
-        int n = data.size();
-        if(n%2 == 0){
-            return (data[n/2] + data[n/2 - 1])/2.0;
-        }
-        return data[n/2];
-    }
-};
-```
+The first approach that come to mind is to keep the integers in a list and sort the list every time we need to find the median. This approach is not efficient as sorting the list will take O(nlogn) time. Therefore the time complexity of this approach will be O(n^2logn).
 
 ### Approach 2
 
-The second approach (more optimised) is to use two heaps but using them we can only find the median when the integers are being added to the stream. We can't find the median when the integers are being removed from the stream. 
+The second approach (more optimised) is to use two heaps but using them we can only find the median when the integers are being added to the stream. We can't find the median when the integers are being removed from the stream. To solve this issue we can use two multi-sets. One multi-set will store the integers less than the median and the other multi-set will store the integers greater than the median.
+Thus the complexity of adding and removing the integers will be O(logn) and finding the median will be O(1). Therefore the overall time complexity of this approach will be O(nlogn).
 
+<Tabs>
+
+    ```cpp/Approach1.cpp
+    #include <bits/stdc++.h>
+    using namespace std;
+
+    void addNumber(vector<int> &stream, int x){
+        stream.push_back(x);
+        sort(stream.begin(), stream.end());
+    }
+
+    void removeNumber(vector<int> &stream, int x){
+        stream.erase(find(stream.begin(), stream.end(), x));
+    }
+
+    int main(){
+        vector<int> stream;
+        int n;
+        cin >> n;
+        for(int i=0; i<n; i++){
+            int x;
+            cin >> x;
+            addNumber(stream, x);
+            cout << "Median : " << stream[stream.size()/2] << endl;
+        }
+        return 0;
+    }
+
+    ```
+
+    ```cpp/Approach2.cpp
+    #include <bits/stdc++.h>
+    using namespace std;
+
+    void add(int num, multiset<int,greater<int>> &sm, multiset<int> &lg){
+    if(sm.empty()){
+        sm.insert(num);
+    }
+    else{
+        if(sm.size() == lg.size()){
+            if(num > *lg.begin()){
+                int temp = *lg.begin();
+                lg.erase(lg.begin());
+                lg.insert(num);
+                sm.insert(temp);
+            }
+            else{
+                sm.insert(num);
+            }
+        }
+        else{
+            if(num < *sm.begin()){
+                int temp = *sm.begin();
+                sm.erase(sm.begin());
+                sm.insert(num);
+                lg.insert(temp);
+            }
+            else{
+                lg.insert(num);
+            }
+        }
+    }
+}
+
+    void remove(int num, multiset<int,greater<int>> &sm, multiset<int> &lg){
+        if(sm.find(num) != sm.end()){
+            sm.erase(sm.find(num));
+        }
+        else{
+            lg.erase(lg.find(num));
+        }
+        if(sm.size() == lg.size()){
+            return;
+        }
+        if(sm.size() > lg.size() + 1){
+            lg.insert(*sm.begin());
+            sm.erase(sm.begin());
+        }
+        if(sm.size() < lg.size()){
+            sm.insert(*lg.begin());
+            lg.erase(lg.begin());
+        }
+    }
+
+    int main(){
+        multiset<int,greater<int>> sm;
+        multiset<int> lg;
+        int n;
+        cin >> n;
+        for(int i=0; i<n; i++){
+            int x;
+            cin >> x;
+            add(x, sm, lg);
+            if(sm.size() == lg.size()){
+                cout << "Median : " << (*sm.begin() + *lg.begin())/2 << endl;
+            }
+            else{
+                cout << "Median : " << *sm.begin() << endl;
+            }
+        }
+    }
+
+    ```
+
+</Tabs>
