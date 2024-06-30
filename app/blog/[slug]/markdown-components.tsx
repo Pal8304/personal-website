@@ -9,7 +9,7 @@ Code.theme = 'dracula'
 export const mdxComponents: MDXComponents = {
   a: ({ children, ...props }) => {
     return (
-      <Link {...props} href={props.href || ''}>
+      <Link {...props} href={props.href || ''} className='hover:underline' rel="noopener noreferrer" target="_blank">
         {children}
       </Link>
     )

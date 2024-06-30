@@ -1,10 +1,9 @@
 import AccountLink from "../components/account-link";
 import { SOCIALS } from "../data/constants";
-import { Github, Linkedin, Twitter } from 'lucide-react';
 
 export default function Home() {
   return (
-    <div className={`text-white text-2xl bg-slate-900 h-screen w-screen flex flex-col justify-center items-center font-roboto`}>
+    <div className={`text-white text-2xl bg-slate-900 h-screen w-screen flex flex-col justify-center items-center`}>
       <div>
         Hey there, {`I'm`}
       </div>

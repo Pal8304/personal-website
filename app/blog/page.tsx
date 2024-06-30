@@ -13,26 +13,28 @@ export default async function Blog() {
     }
   });
   return (
-    <div className="font-mono flex flex-col items-start justify-center w-screen h-screen gap-2 ml-12">
-      <div className="flex flex-col gap-2">
-        <div className="font-semibold text-6xl flex items-start justify-start">
-          Blogs
+    <div className="flex flex-row w-full justify-center items-center mt-32">
+      <div className="font-mono flex flex-col items-start justify-center w-2/3">
+        <div className="flex flex-col gap-2">
+          <div className="font-semibold text-6xl flex items-start justify-start">
+            Blogs
+          </div>
+          <div className="text-2xl opacity-50">
+            My weird thoughts and ideas on the internet
+          </div>
         </div>
-        <div className="text-2xl opacity-50">
-          My weird thoughts and ideas on the internet
+        <div className="flex flex-col items-start justify-start gap-8 mt-8 overflow-scroll">
+          {blogs.map((blog, index) => {
+            return (
+              <BlogLink
+                key={index}
+                blogtitle={blog.title}
+                blogurl={`/blog/${blog.slug}`}
+                blogdate={blog.date}
+              />
+            );
+          })}
         </div>
-      </div>
-      <div className="flex flex-col items-start justify-start gap-8 mt-8">
-        {blogs.map((blog, index) => {
-          return (
-            <BlogLink
-              key={index}
-              blogtitle={blog.title}
-              blogurl={`/blog/${blog.slug}`}
-              blogdate={blog.date}
-            />
-          );
-        })}
       </div>
     </div>
   );

@@ -3,11 +3,7 @@ import "./globals.css";
 import { Inter, Roboto_Mono, Roboto, Dancing_Script } from "next/font/google";
 import Navbar from "../components/navbar";
 
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
-});
+const inter = Inter({ subsets: ['latin'] })
 
 const roboto_mono = Roboto_Mono({
   subsets: ["latin"],
@@ -41,10 +37,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${dancing_script.variable} ${inter.variable} ${roboto.variable} ${roboto_mono.variable}`}
+        className={`${dancing_script.variable} ${roboto.variable} ${roboto_mono.variable}`}
       >
-        <Navbar />
-        {children}
+        <div className={inter.className}>
+          <Navbar />
+          {children}
+        </div>
       </body>
     </html>
   );

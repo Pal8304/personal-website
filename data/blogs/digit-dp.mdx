@@ -1,0 +1,60 @@
+---
+Title : Digit DP
+Date : 2023-06-29
+---
+
+Digit DP is considered to be one of the most daunting topics of Dynamic Programming. It is a technique that is used to solve problems that involve counting the number of integers that satisfy a certain condition. The condition can be anything like the number should not contain a certain digit, the number should be divisible by a certain number, the sum of digits should follow a certain condition etc.
+
+In this blog, I will try to explain the general approach to solve problems involving Digit DP.
+
+The general approach to solve problems involving Digit DP is to convert the number into a string and then iterate over the digits of the number. At each digit, we will calculate the number of integers that satisfy the condition up to that digit. We will then use this information to calculate the number of integers that satisfy the condition up to the next digit.
+
+Let's take an example to understand this better.
+
+## Problem Statement
+
+Given a number N, we need to find the number of integers from 1 to N that do not contain the digit 4.
+
+## Approach 
+
+We will convert the given N into a string and then iterate over the digits of the number.
+
+At each index of the string, we will calculate the number of integers that do not contain the digit 4 up to that index. Here we will use bool isTight to keep track of whether the number formed so far is equal to the number formed by the digits of N up to that index.
+
+Let's implement this approach in code.
+
+```cpp/DigitDP.cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int dp[20][2];
+
+int func(int ind, bool isTight, string &num){
+    if(ind == num.size()){
+        return 1;
+    }
+    if(dp[ind][isTight] != -1){
+        return dp[ind][isTight];
+    }
+    int ans = 0;
+    for(int i = 0;i <= 9;i++){
+        if(isTight && i > num[ind] - '0') break;
+        if(i == 4) continue;
+        ans += func(ind + 1, isTight && (i == num[ind] - '0'), num);
+    }
+    return dp[ind][isTight] = ans;
+}
+
+int main(){
+    int n;
+    cin >> n;
+    string num = to_string(n);
+    memset(dp, -1, sizeof(dp));
+    cout << func(0, true, num) - 1 << endl;
+}
+
+```
+
+
+
+

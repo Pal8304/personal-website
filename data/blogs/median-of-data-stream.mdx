@@ -1,6 +1,6 @@
 ---
 Title: Median of Data Stream
-Date: 2021-01-01
+Date: 2023-06-28
 ---
 
 Let's think of a question :-
@@ -17,7 +17,7 @@ The first approach that come to mind is to keep the integers in a list and sort 
 
 ### Approach 2
 
-The second approach (more optimised) is to use two heaps but using them we can only find the median when the integers are being added to the stream. We can't find the median when the integers are being removed from the stream. To solve this issue we can use two multi-sets. One multi-set will store the integers less than the median and the other multi-set will store the integers greater than the median.
+The second approach (more optimised) is to use two heaps. But I prefer the use of multisets which basically serve the same purpose. One multi-set will store the integers less than the median and the other multi-set will store the integers greater than the median.
 Thus the complexity of adding and removing the integers will be O(logn) and finding the median will be O(1). Therefore the overall time complexity of this approach will be O(nlogn).
 
 <Tabs>
@@ -55,34 +55,34 @@ Thus the complexity of adding and removing the integers will be O(logn) and find
     using namespace std;
 
     void add(int num, multiset<int,greater<int>> &sm, multiset<int> &lg){
-    if(sm.empty()){
-        sm.insert(num);
-    }
-    else{
-        if(sm.size() == lg.size()){
-            if(num > *lg.begin()){
-                int temp = *lg.begin();
-                lg.erase(lg.begin());
-                lg.insert(num);
-                sm.insert(temp);
-            }
-            else{
-                sm.insert(num);
-            }
+        if(sm.empty()){
+            sm.insert(num);
         }
         else{
-            if(num < *sm.begin()){
-                int temp = *sm.begin();
-                sm.erase(sm.begin());
-                sm.insert(num);
-                lg.insert(temp);
+            if(sm.size() == lg.size()){
+                if(num > *lg.begin()){
+                    int temp = *lg.begin();
+                    lg.erase(lg.begin());
+                    lg.insert(num);
+                    sm.insert(temp);
+                }
+                else{
+                    sm.insert(num);
+                }
             }
             else{
-                lg.insert(num);
+                if(num < *sm.begin()){
+                    int temp = *sm.begin();
+                    sm.erase(sm.begin());
+                    sm.insert(num);
+                    lg.insert(temp);
+                }
+                else{
+                    lg.insert(num);
+                }
             }
         }
     }
-}
 
     void remove(int num, multiset<int,greater<int>> &sm, multiset<int> &lg){
         if(sm.find(num) != sm.end()){
@@ -125,3 +125,11 @@ Thus the complexity of adding and removing the integers will be O(logn) and find
     ```
 
 </Tabs>
+
+
+Some problems related to this question are :-
+
+- [Find Median from Data Stream (Leetcode)](https://leetcode.com/problems/find-median-from-data-stream/)
+- [Sliding Window Median (Leetcode)](https://leetcode.com/problems/sliding-window-median/)
+- [Sliding Window Median (CSES)](https://cses.fi/problemset/task/1076)
+- [Sliding Window Cost (CSES)](https://cses.fi/problemset/task/1077)

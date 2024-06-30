@@ -1,3 +1,4 @@
+import Link from "next/link";
 import getPosts, { getPost } from "../get-posts";
 import { PostBody } from "./post-body";
 import { notFound } from "next/navigation";
@@ -29,11 +30,20 @@ export default async function PostPage({
   return (
     <div>
       <div className="flex flex-col m-4">
-        <div className="flex text-4xl items-center justify-center">{post.title}</div>
-        <div className="flex items-center justify-center opacity-55">{post.date}</div>
+        <Link href="/blog" className="hover:underline">
+          Back to blog
+        </Link>
+        <div className="flex text-4xl items-center justify-center">
+          {post.title}
+        </div>
+        <div className="flex items-center justify-center opacity-55">
+          {post.date}
+        </div>
       </div>
-      <div className="m-4">
-        <PostBody>{post.content}</PostBody>
+      <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col m-4 w-2/3">
+          <PostBody>{post.content}</PostBody>
+        </div>
       </div>
     </div>
   );
