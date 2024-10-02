@@ -15,7 +15,7 @@ export default function CodingProfileLink({
       href={codingProfileLink}
       rel="noopener noreferrer"
       target="_blank"
-      className="p-2 font-roboto border-2 border-slate-700 rounded-md bg-slate-800 hover:bg-slate-700 min-w-96 h-auto m-4 relative transition-all duration-300 transform hover:scale-110 hover:shadow-2xl hover:border-2 hover:border-gray-50"
+      className="p-2 border-2 border-slate-700 rounded-md bg-slate-800 hover:bg-slate-600 min-w-96 h-auto m-4 relative transition-all duration-100 transform hover:shadow-2xl"
     >
       <div className="flex flex-row w-96 justify-between">
         <div className="flex flex-col w-1/2">

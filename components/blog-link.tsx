@@ -8,7 +8,7 @@ export default function BlogLink({blogtitle,blogurl,blogdate} : BlogLinkProps){
             <div className="text-lg opacity-50">
                 {blogdate}
             </div>
-            <div className="text-2xl transition duration-500 ease-in-out transform hover:scale-110">
+            <div className="text-2xl transition duration-500 ease-in-out hover:underline">
                 {blogtitle}
             </div>
         </Link>

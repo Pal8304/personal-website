@@ -6,8 +6,8 @@ export default function Navbar() {
   const validPaths = ["/", "/projects", "/coding-profile", "/blog"];
   if(!validPaths.includes(currentPath)) return null;
   return (
-    <div className="w-screen flex justify-center items-center mt-16">
-      <nav className="fixed w-2/3 justify-center">
+    <div className="w-screen fixed top-4 flex justify-center items-center">
+      <nav className="w-2/3 justify-center">
         <div className="flex flex-row items-center justify-between m-4 text-2xl rounded-2xl bg-slate-700">
           <div>
             <Link href="/" className="m-4">

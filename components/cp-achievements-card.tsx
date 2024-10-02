@@ -10,10 +10,10 @@ export default function CPAchievementsCard({
   description,
 }: CPAchievementsCardProps) {
   return (
-    <div className="text-2xl p-4 w-full m-4 font-roboto flex flex-col rounded-lg bg-slate-800 hover:bg-slate-700 hover:border-2 transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:border-gray-50">
+    <div className="text-2xl p-4 w-full m-4 flex flex-col rounded-lg bg-slate-800 hover:bg-slate-600 transition-all duration-100 transform">
       <div className="flex flex-row justify-between">
         <div>{event}</div>
-        <div className="p-2 rounded-full hover:bg-slate-600">
+        <div className="p-2 rounded-full hover:bg-slate-500">
           <Link
             href={certificateLink}
             rel="noopener noreferrer"
