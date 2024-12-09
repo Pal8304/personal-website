@@ -1,3 +1,4 @@
+import AboutMe from "@/components/about-me";
 import AccountLink from "../components/account-link";
 import { SOCIALS } from "../data/constants";
 
@@ -16,6 +17,9 @@ export default function Home() {
             <AccountLink key={index} externalLink={social.externalLink} Icon={social.Icon} />
           ))
         }
+      </div>
+      <div>
+        <AboutMe />
       </div>
     </div>
   );

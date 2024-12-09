@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Navbar() {
   const currentPath = usePathname();
   const validPaths = ["/", "/projects", "/coding-profile", "/blog"];
-  if(!validPaths.includes(currentPath)) return null;
+  if (!validPaths.includes(currentPath)) return null;
   return (
     <div className="w-screen fixed top-4 flex justify-center items-center">
       <nav className="w-2/3 justify-center">

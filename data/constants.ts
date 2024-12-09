@@ -17,10 +17,17 @@ export const SOCIALS: AccountLinkProps[] = [
   {
     externalLink: "https://twitter.com/PalJ_08",
     Icon: Twitter,
-  }
+  },
 ];
 
 export const PROJECTS: ProjectCardProps[] = [
+  {
+    deployLink: "https://just-another-graph-visualizer.vercel.app/",
+    githubLink: "https://github.com/Pal8304/just-another-graph-visualizer",
+    title: "just-another-graph-visualizer",
+    description: "A graph visualizer that simulates various graph algorithms",
+    tags: ["NextJs", "Graph Visualization", "Tailwind"],
+  },
   {
     deployLink: "https://scheduling-algorithms-rnud.vercel.app/",
     githubLink: "https://github.com/Pal8304/Scheduling_Algorithms",

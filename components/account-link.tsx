@@ -11,7 +11,7 @@ export default function AccountLink({ externalLink, Icon }: AccountLinkProps) {
         target="_blank"
         className="p-2"
       >
-        <Icon size={32}/>
+        <Icon size={32} />
       </Link>
     </div>
   );

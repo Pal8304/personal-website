@@ -3,7 +3,7 @@ import "./globals.css";
 import { Inter, Roboto_Mono, Roboto, Dancing_Script } from "next/font/google";
 import Navbar from "../components/navbar";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 const roboto_mono = Roboto_Mono({
   subsets: ["latin"],

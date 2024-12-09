@@ -5,10 +5,10 @@ import CPAchievements from "@/components/cp-achievements";
 
 export default function CodingProfile() {
   return (
-    <div className="flex flex-row w-full h-screen">
-      <div className="flex flex-col items-start justify-center w-2/3 h-full ml-6 gap-4">
-        <div>
-          <div className="text-6xl justify-items-center items-center ml-4">
+    <div className="flex flex-row w-full justify-center items-center h-screen">
+      <div className="flex flex-col items-start justify-center w-2/3">
+        <div className="mb-6">
+          <div className="text-6xl justify-items-center items-center ml-4 mb-1">
             Coding Profiles
           </div>
           <div className="text-2xl opacity-50 ml-4">
