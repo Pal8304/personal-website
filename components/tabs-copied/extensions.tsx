@@ -1,4 +1,4 @@
-import { Code, Root as CodeRoot } from "bright";
+import { Code } from "bright";
 import { TabsRoot, TabsContent, TabsList } from "./client";
 
 /** @type {import("bright").BrightProps["TitleBarContent"]} */
@@ -38,7 +38,7 @@ function Root(brightProps : any) {
 }`,
         }}
       />
-      <Code.Root {...brightProps} />
+      {Code.Root && Code.Root(brightProps)}
     </TabsRoot>
   );
 }
@@ -51,7 +51,7 @@ function Content(brightProps : any) {
     <>
       {propsList.map((props : any) => (
         <TabsContent key={props.title} value={props.title}>
-          <Code.Pre {...props} />
+          {Code.Pre && Code.Pre(props)}
         </TabsContent>
       ))}
     </>

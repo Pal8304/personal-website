@@ -3,17 +3,13 @@ import getPosts, { getPost } from "../get-posts";
 import { PostBody } from "./post-body";
 import { notFound } from "next/navigation";
 
-export async function getStaticPaths() {
+export async function generateStaticParams() {
   const posts = await getPosts();
   //console.log(posts);
-  return {
-    paths: posts.map((post) => ({
-      params: {
-        slug: post.slug,
-      },
-    })),
-    fallback: false,
-  };
+  
+  return posts.map((post) => ({
+    slug: post.slug
+  }))
 }
 
 export default async function PostPage({
