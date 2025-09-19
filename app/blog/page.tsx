@@ -21,7 +21,7 @@ export default async function Blog() {
             My weird thoughts and ideas on the internet
           </div>
         </div>
-        <div className="flex flex-col items-start justify-start gap-8 mt-8 overflow-scroll">
+        {/* <div className="flex flex-col items-start justify-start gap-8 mt-8 overflow-scroll">
           {blogs.map((blog, index) => {
             return (
               <BlogLink
@@ -32,10 +32,10 @@ export default async function Blog() {
               />
             );
           })}
-        </div>
-        {/* <div className="flex flex-col text-7xl items-start justify-start gap-8 mt-8">
-          Coming soon!
         </div> */}
+        <div className="flex flex-col text-7xl items-start justify-start gap-8 mt-8">
+          Coming soon!
+        </div>
       </div>
     </div>
   );
