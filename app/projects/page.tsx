@@ -3,7 +3,7 @@ import { PROJECTS } from "../../data/constants";
 export default function Project() {
   return (
     <div className="flex flex-row w-full justify-center items-center h-screen">
-      <div className="flex flex-col items-start justify-center w-2/3 h-2/3">
+      <div className="flex flex-col items-start justify-center w-2/3 h-full pt-32">
         <div className="mb-6">
           <div className="text-6xl justify-items-center items-center mb-1">
             My Projects

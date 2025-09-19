@@ -34,14 +34,7 @@ export const PROJECTS: ProjectCardProps[] = [
     title: "Scheduling_Algorithms",
     description: "A simulator of scheduling algorithms for OS project",
     tags: ["NextJs", "Tailwind"],
-  },
-  {
-    deployLink: "https://pal8304.github.io/Tower_of_Hanoi/",
-    githubLink: "https://github.com/Pal8304/Tower_of_Hanoi",
-    title: "Tower_of_Hanoi",
-    description: "A simple tower of hanoi game simulator",
-    tags: ["HTML", "CSS", "Javascript"],
-  },
+  }, 
   {
     deployLink: "",
     githubLink: "https://github.com/Pal8304/Code_Climb",
@@ -56,6 +49,20 @@ export const PROJECTS: ProjectCardProps[] = [
     description: "My portfolio website",
     tags: ["NextJs", "Tailwind"],
   },
+  {
+    deployLink: "https://pal8304.github.io/Tower_of_Hanoi/",
+    githubLink: "https://github.com/Pal8304/Tower_of_Hanoi",
+    title: "Tower_of_Hanoi",
+    description: "A simple tower of hanoi game simulator",
+    tags: ["HTML", "CSS", "Javascript"],
+  },
+  // {
+  //   deployLink: "https://pal8304.github.io/Sorting_Visualizer/",
+  //   githubLink: "",
+  //   title: "Sorting_Visualizer",
+  //   description: "A sorting visualizer",
+  //   tags: ["HTML", "CSS", "Javascript"],
+  // },
 ];
 
 export const CODINGPROFILES: CodingProfileLinkProps[] = [
@@ -64,7 +71,7 @@ export const CODINGPROFILES: CodingProfileLinkProps[] = [
     codingPlatform: "Codeforces",
     codingProfileLink: "https://codeforces.com/profile/Pal_J",
     iconPath: "/codeforces.png",
-    maxRating: 1600,
+    maxRating: 1601,
     highestTag: "Expert",
   },
   {
@@ -72,7 +79,7 @@ export const CODINGPROFILES: CodingProfileLinkProps[] = [
     codingPlatform: "Codechef",
     codingProfileLink: "https://www.codechef.com/users/palash_jhaveri",
     iconPath: "/codechef.jpeg",
-    maxRating: 1600,
+    maxRating: 1834,
     highestTag: "4 Star",
   },
   {
@@ -80,8 +87,8 @@ export const CODINGPROFILES: CodingProfileLinkProps[] = [
     codingPlatform: "Leetcode",
     codingProfileLink: "https://leetcode.com/Pal_J/",
     iconPath: "/leetcode.png",
-    maxRating: 1600,
-    highestTag: "None",
+    maxRating: 2150,
+    highestTag: "Guardian",
   },
 ];
 

@@ -11,7 +11,7 @@ export default function Navbar() {
         <div className="flex flex-row items-center justify-between m-4 text-2xl rounded-2xl bg-slate-700">
           <div>
             <Link href="/" className="m-4">
-              Palash Jhaveri
+             My Portfolio 
             </Link>
           </div>
           <div className="p-4">
