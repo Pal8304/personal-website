@@ -1,5 +1,6 @@
 import ProjectCard from "../../components/project-card";
 import { PROJECTS } from "../../data/constants";
+
 export default function Project() {
   return (
     <div className="flex flex-row w-full justify-center items-center h-screen">

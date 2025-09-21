@@ -42,14 +42,14 @@ export default function Navbar() {
             )}
             {currentPath == "/coding-profile" ? (
               <Link href="/coding-profile" className="m-4 opacity-100">
-                Coding Profiles
+                Coding 
               </Link>
             ) : (
               <Link
                 href="/coding-profile"
                 className="m-4 opacity-50 before:absolute before:opacity-0 before:translate-x-[-20px] before:transition-all duration-300 after:opacity-0 after:absolute after:translate-x-[5px] after:transition-all before:content-['<'] after:content-['/>'] hover:before:opacity-100 hover:after:opacity-100 hover:opacity-100 hover:before:translate-x-[-15px] hover:after:translate-x-0"
               >
-                Coding Profiles
+                Coding 
               </Link>
             )}
             {currentPath == "/blog" ? (

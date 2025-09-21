@@ -1,7 +1,5 @@
-import { profile } from "console";
 import CodingProfileLink from "../../components/coding-profile-link";
 import { CODINGPROFILES } from "../../data/constants";
-import CPAchievements from "@/components/cp-achievements";
 
 export default function CodingProfile() {
   return (
@@ -16,9 +14,8 @@ export default function CodingProfile() {
           </div>
         </div>
         <div className="flex flex-wrap">
-          {
-            CODINGPROFILES.map((profile,index) => {
-              return(
+          {CODINGPROFILES.map((profile, index) => {
+            return (
               <CodingProfileLink
                 key={index}
                 codingPlatform={profile.codingPlatform}
@@ -27,9 +24,9 @@ export default function CodingProfile() {
                 iconPath={profile.iconPath}
                 highestTag={profile.highestTag}
                 maxRating={profile.maxRating}
-               />)
-            })
-          }
+              />
+            );
+          })}
         </div>
       </div>
       {/* <CPAchievements /> */}

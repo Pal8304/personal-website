@@ -14,7 +14,7 @@ export default async function Blog() {
   });
   return (
     <div className="flex flex-row w-full justify-center items-center h-screen">
-      <div className="font-mono flex flex-col items-start justify-center w-2/3">
+      <div className="flex flex-col items-start justify-center w-2/3">
         <div className="flex flex-col gap-2">
           <div className="text-6xl flex items-start justify-start">Blogs</div>
           <div className="text-2xl opacity-50">

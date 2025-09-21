@@ -39,7 +39,7 @@ export default function RootLayout({
       <body
         className={`${dancing_script.variable} ${roboto.variable} ${roboto_mono.variable}`}
       >
-        <div className={inter.className}>
+        <div className="font-mono">
           <Navbar />
           {children}
         </div>
