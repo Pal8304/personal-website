@@ -6,9 +6,9 @@ export default function Navbar() {
   const validPaths = ["/", "/projects", "/coding-profile", "/blog"];
   if (!validPaths.includes(currentPath)) return null;
   return (
-    <div className="w-screen fixed top-4 flex justify-center items-center">
-      <nav className="w-2/3 justify-center">
-        <div className="flex flex-row items-center justify-between m-4 text-2xl rounded-2xl bg-slate-700">
+    <div className="w-full fixed top-4 flex justify-center items-center">
+      <nav className="w-2/3 justify-center overflow-scroll">
+        <div className="flex flex-row items-center justify-between m-4 text-2xl rounded-2xl bg-transparent backdrop-blur-md border border-white/10">
           <div>
             <Link href="/" className="m-4">
              My Portfolio 
