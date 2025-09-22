@@ -1,83 +1,32 @@
 "use client";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { NAV_ITEMS, PORTFOLIO_TITLE } from "../data/constants";
+import NavItem from "./nav-item";
+
 export default function Navbar() {
   const currentPath = usePathname();
-  const validPaths = ["/", "/projects", "/coding-profile", "/blog"];
+  const validPaths = NAV_ITEMS.map(item => item.href);
+  
   if (!validPaths.includes(currentPath)) return null;
+
   return (
     <div className="w-full fixed top-4 flex justify-center items-center">
       <nav className="w-2/3 justify-center overflow-scroll">
         <div className="flex flex-row items-center justify-between m-4 text-2xl rounded-2xl bg-transparent backdrop-blur-md border border-white/10">
           <div>
             <Link href="/" className="m-4">
-             My Portfolio 
+              {PORTFOLIO_TITLE}
             </Link>
           </div>
           <div className="p-4">
-            {/* optimize this when you have time */}
-            {currentPath == "/" ? (
-              <Link href="/" className="m-4 opacity-100">
-                About
-              </Link>
-            ) : (
-              <Link
-                href="/"
-                className="m-4 opacity-50 before:absolute before:opacity-0 before:translate-x-[-20px] before:transition-all duration-300 after:opacity-0 after:absolute after:translate-x-[5px] after:transition-all before:content-['<'] after:content-['/>'] hover:before:opacity-100 hover:after:opacity-100 hover:opacity-100 hover:before:translate-x-[-15px] hover:after:translate-x-0"
-              >
-                About
-              </Link>
-            )}
-            {currentPath == "/projects" ? (
-              <Link href="/projects" className="m-4 opacity-100">
-                Projects
-              </Link>
-            ) : (
-              <Link
-                href="/projects"
-                className="m-4 opacity-50 before:absolute before:opacity-0 before:translate-x-[-20px] before:transition-all duration-300 after:opacity-0 after:absolute after:translate-x-[5px] after:transition-all before:content-['<'] after:content-['/>'] hover:before:opacity-100 hover:after:opacity-100 hover:opacity-100 hover:before:translate-x-[-15px] hover:after:translate-x-0"
-              >
-                Projects
-              </Link>
-            )}
-            {currentPath == "/coding-profile" ? (
-              <Link href="/coding-profile" className="m-4 opacity-100">
-                Coding 
-              </Link>
-            ) : (
-              <Link
-                href="/coding-profile"
-                className="m-4 opacity-50 before:absolute before:opacity-0 before:translate-x-[-20px] before:transition-all duration-300 after:opacity-0 after:absolute after:translate-x-[5px] after:transition-all before:content-['<'] after:content-['/>'] hover:before:opacity-100 hover:after:opacity-100 hover:opacity-100 hover:before:translate-x-[-15px] hover:after:translate-x-0"
-              >
-                Coding 
-              </Link>
-            )}
-            {currentPath == "/blog" ? (
-              <Link href="/blogs" className="m-4 opacity-100">
-                Blog
-              </Link>
-            ) : (
-              <Link
-                href="/blog"
-                className="m-4 opacity-50 before:absolute before:opacity-0 before:translate-x-[-20px] before:transition-all duration-300 after:opacity-0 after:absolute after:translate-x-[5px] after:transition-all before:content-['<'] after:content-['/>'] hover:before:opacity-100 hover:after:opacity-100 hover:opacity-100 hover:before:translate-x-[-15px] hover:after:translate-x-0"
-              >
-                Blog
-              </Link>
-            )}
-            {/* {currentPath == "/contact" ? (
-              <Link
-                href="/contact"
-                className="m-4 border-2 rounded-md p-2 bg-slate-800"
-              >
-                
-                Contact
-              </Link>
-            ) : (
-              <Link href="/contact" className="m-4">
-                
-                Contact
-              </Link>
-            )} */}
+            {NAV_ITEMS.map((item) => (
+              <NavItem
+                key={item.href}
+                href={item.href}
+                label={item.label}
+              />
+            ))}
           </div>
         </div>
       </nav>

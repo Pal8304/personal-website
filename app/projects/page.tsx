@@ -5,7 +5,7 @@ import { PROJECTS } from "../../data/constants";
 export default function Project() {
   return (
     <PageTemplate 
-      title="My Projects" 
+      title="Projects" 
       subtitle="The debacles I create when an idea hits me"
     >
       <div className="flex flex-wrap gap-4 overflow-auto pt-8">

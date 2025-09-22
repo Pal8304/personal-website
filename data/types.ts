@@ -40,3 +40,8 @@ export interface Post {
   content: string;
   slug: string;
 }
+
+export interface NavItemProps {
+  href: string;
+  label: string;
+}

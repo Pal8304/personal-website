@@ -2,8 +2,30 @@ import { AccountLinkProps } from "./types";
 import { ProjectCardProps } from "./types";
 import { CPAchievementsCardProps } from "./types";
 import { CodingProfileLinkProps } from "./types";
+import { NavItemProps } from "./types";
 
 import { Github, Linkedin, Twitter } from "lucide-react";
+
+export const NAV_ITEMS: NavItemProps[] = [
+  {
+    href: "/",
+    label: "About",
+  },
+  {
+    href: "/projects",
+    label: "Projects",
+  },
+  {
+    href: "/coding-profile",
+    label: "Coding",
+  },
+  {
+    href: "/blog",
+    label: "Blog",
+  },
+];
+
+export const PORTFOLIO_TITLE = "My Portfolio";
 
 export const SOCIALS: AccountLinkProps[] = [
   {
