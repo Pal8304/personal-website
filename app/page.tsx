@@ -1,4 +1,3 @@
-import AboutMe from "@/components/about-me";
 import HeyThere from "@/components/hey-there";
 
 export default function Home() {

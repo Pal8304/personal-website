@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Inter, Roboto_Mono, Roboto, Dancing_Script } from "next/font/google";
-import Navbar from "../components/navbar";
+import Navbar from "../components/navbar/navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -39,7 +39,7 @@ export default function RootLayout({
       <body
         className={`${dancing_script.variable} ${roboto.variable} ${roboto_mono.variable}`}
       >
-        <div className={inter.className}>
+        <div className="flex font-mono min-h-screen">
           <Navbar />
           {children}
         </div>

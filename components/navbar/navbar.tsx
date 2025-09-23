@@ -1,8 +1,8 @@
 "use client";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { NAV_ITEMS, PORTFOLIO_TITLE } from "../data/constants";
-import NavItem from "./navbar/nav-item";
+import { NAV_ITEMS, PORTFOLIO_TITLE } from "../../data/constants";
+import NavItem from "./nav-item";
 
 export default function Navbar() {
   const currentPath = usePathname();
