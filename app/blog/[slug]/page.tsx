@@ -33,7 +33,7 @@ export default async function PostPage({
           Back to Portfolio
         </Link>
       </div>
-      <div className="w-full border-b-2"> </div>
+      <div className="w-full border-b-2 opacity-50"> </div>
       <div className="w-2/3 flex flex-col gap-2 mt-4 p-2">
         <div className="text-5xl h-full">{post.title}</div>
         {/* <div className="text-2xl h-full opacity-75">{post.subtitle}</div> */}
@@ -44,7 +44,23 @@ export default async function PostPage({
             year: "numeric",
           })}
         </div>
+        {post.tags && post.tags.length > 0 && (
+          <div className="flex flex-wrap items-center gap-1 mt-2 mb-4">
+            {post.tags.map((tag, index) => (
+              <div
+                key={tag}
+                className="min-w-6 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 text-sm px-3 py-1 rounded-full mr-2 mb-2 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors duration-200"
+              >
+                {tag}
+              </div>
+            ))}
+          </div>
+        )}
         {post.content && <PostBody>{post.content}</PostBody>}
+      </div>
+      <div className="w-full border-b-2 opacity-40"></div>
+      <div className="flex w-2/3 p-2 mb-4">
+        currently a placeholder for footer
       </div>
     </div>
   );
