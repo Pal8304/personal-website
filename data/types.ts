@@ -6,8 +6,10 @@ export interface AccountLinkProps {
 
 export interface BlogLinkProps {
   blogtitle: string;
+  blogsubtitle: string;
   blogurl: string;
   blogdate: string;
+  blogtags: string[];
 }
 
 export interface CodingProfileLinkProps {
@@ -36,7 +38,9 @@ export interface ProjectCardProps {
 
 export interface Post {
   title: string;
+  subtitle: string;
   date: string;
+  tags: string[];
   content: string;
   slug: string;
 }

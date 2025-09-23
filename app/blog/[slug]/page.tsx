@@ -6,10 +6,10 @@ import { notFound } from "next/navigation";
 export async function generateStaticParams() {
   const posts = await getPosts();
   //console.log(posts);
-  
+
   return posts.map((post) => ({
-    slug: post.slug
-  }))
+    slug: post.slug,
+  }));
 }
 
 export default async function PostPage({
@@ -24,22 +24,27 @@ export default async function PostPage({
   if (!post) return notFound();
   // Pass the post contents to MDX
   return (
-    <div>
-      <div className="flex flex-col m-4">
-        <Link href="/blog" className="hover:underline">
-          Back to blog
+    <div className="flex flex-col justify-center items-center w-full h-full">
+      <div className="flex w-2/3 p-2">
+        <Link href="/blog" className="text-2xl ">
+          Blog List
         </Link>
-        <div className="flex text-4xl items-center justify-center">
-          {post.title}
-        </div>
-        <div className="flex items-center justify-center opacity-55">
-          {post.date}
-        </div>
+        <Link href="/" className="text-lg ml-auto">
+          Back to Portfolio
+        </Link>
       </div>
-      <div className="flex flex-col justify-center items-center">
-        <div className="flex flex-col m-4 w-2/3">
-          <PostBody>{post.content}</PostBody>
+      <div className="w-full border-b-2"> </div>
+      <div className="w-2/3 flex flex-col gap-2 mt-4 p-2">
+        <div className="text-5xl h-full">{post.title}</div>
+        {/* <div className="text-2xl h-full opacity-75">{post.subtitle}</div> */}
+        <div className="text-lg h-full opacity-50">
+          {new Date(post.date).toLocaleDateString("en-US", {
+            month: "short",
+            day: "numeric",
+            year: "numeric",
+          })}
         </div>
+        {post.content && <PostBody>{post.content}</PostBody>}
       </div>
     </div>
   );
