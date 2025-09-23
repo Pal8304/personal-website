@@ -1,6 +1,7 @@
 import Link from "next/link";
-
+import Image from "next/image";
 import { ProjectCardProps } from "@/data/types";
+import { ExternalLink } from "lucide-react";
 
 export default function ProjectCard({
   deployLink,
@@ -10,23 +11,57 @@ export default function ProjectCard({
   tags,
 }: ProjectCardProps) {
   return (
-    <Link
-      href={deployLink}
-      rel="noopener noreferrer"
-      target="_blank"
-      className="gap-1 rounded-md flex flex-col p-4 bg-slate-800 hover:bg-slate-700 border-2 border-slate-700 min-w-72 h-auto"
-    >
-      <div className="text-2xl">{title}</div>
-      <div className="text-xl opacity-50 mb-4">{description}</div>
-      <div className="flex gap-2 text-base align-bottom">
-        {tags.map((key, tag) => {
-          return (
-            <div key={tag} className="rounded-lg bg-slate-600 p-2">
-              {key}
-            </div>
-          );
-        })}
+    <div className="group flex flex-col w-[90%] bg-transparent border border-white/10 rounded-2xl p-4 m-2
+     hover:border-white/20 transition-all duration-300 
+     hover:border-rounded-lg
+     hover:shadow-[0_0_20px_rgba(255,255,255,0.05)]
+     hover:bg-white/[0.02] hover:scale-[1.02] hover:-translate-y-1">
+
+      <div className="flex justify-between items-start">
+        <div className="text-2xl font-semibold group-hover:text-white/90 transition-colors duration-200">
+          {title}
+        </div>
+        <div className="flex gap-3">
+          {deployLink && (
+            <Link
+              href={deployLink}
+              className="opacity-50 hover:opacity-100 transition-opacity duration-200"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <ExternalLink size={20} />
+            </Link>
+          )}
+          {githubLink && (
+            <Link
+              href={githubLink}
+              className="opacity-50 hover:opacity-100 transition-opacity duration-200"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src="/github-mark-white.png"
+                alt="GitHub"
+                width={20}
+                height={20}
+              />
+            </Link>
+          )}
+        </div>
       </div>
-    </Link>
+
+      <div className="text-lg opacity-75 mb-4">{description}</div>
+
+      <div className="flex flex-wrap gap-2">
+        {tags.map((tag) => (
+          <div
+            key={tag}
+            className="text-sm px-3 py-1 rounded-full bg-white/10 text-white/80 border border-white/20 hover:bg-white/15 transition-colors duration-200"
+          >
+            {tag}
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
