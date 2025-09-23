@@ -8,7 +8,7 @@ export default function Project() {
       title="Projects" 
       subtitle="The debacles I create when an idea hits me"
     >
-      <div className="flex flex-wrap gap-4 overflow-auto pt-8">
+      <div className="flex flex-wrap gap-4 overflow-auto">
         {PROJECTS.map((project, index) => {
           return (
             <ProjectCard

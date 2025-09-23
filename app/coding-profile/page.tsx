@@ -1,11 +1,11 @@
-import CodingProfileLink from "../../components/coding-profile-link";
+import CodingProfileLink from "../../components/cp-components/coding-profile-link";
 import PageTemplate from "../../components/page-template";
 import { CODINGPROFILES } from "../../data/constants";
 
 export default function CodingProfile() {
   return (
-    <PageTemplate 
-      title="Coding Profiles" 
+    <PageTemplate
+      title="Coding Profiles"
       subtitle="My competitive programming profiles"
     >
       <div className="flex flex-wrap">
