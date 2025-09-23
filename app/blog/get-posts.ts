@@ -15,10 +15,12 @@ export const getPosts = cache(async () => {
         const { data, content } = matter(postContent);
         return {
           title: data.Title !== undefined ? data.Title : "Untitled",
+          subtitle: data.Subtitle !== undefined ? data.Subtitle : "No description",
           date:
             data.Date !== undefined
               ? Intl.DateTimeFormat("en-US").format(data.Date)
               : "Unknown",
+          tags: data.Tags !== undefined ? data.Tags : [],
           content: content,
           slug: file.replace(/\.mdx$/, ""),
         } as Post;
