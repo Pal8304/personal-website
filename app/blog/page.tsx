@@ -1,4 +1,4 @@
-import BlogLink from "../../components/blog-link";
+import BlogLink from "../../components/blog-list/blog-link";
 import PageTemplate from "../../components/page-template";
 
 import getPosts from "./get-posts";

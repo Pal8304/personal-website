@@ -1,4 +1,4 @@
-import HeyThere from "@/components/hey-there";
+import HeyThere from "@/components/home/hey-there";
 
 export default function Home() {
   return (

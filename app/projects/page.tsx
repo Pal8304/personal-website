@@ -1,4 +1,4 @@
-import ProjectCard from "../../components/project-card";
+import ProjectCard from "../../components/projects/project-card";
 import PageTemplate from "../../components/page-template";
 import { PROJECTS } from "../../data/constants";
 

@@ -13,7 +13,7 @@ export default function NavItem({ href, label }: NavItemProps) {
     <>
       {currentPath === href ? (
         <Link href={href} className="m-5 opacity-100">
-          {label}
+          &lt;{label}/&gt;
         </Link>
       ) : (
         <Link
