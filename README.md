@@ -8,10 +8,14 @@ Blogs ToDo:
 - [ ] Add footer in blog page
 
 Projects ToDo:
-- [ ] Make project links better 
-- [ ] Provide better UI to tags 
+- [x] Make project links better 
+- [x] Provide better UI to tags
+
+Coding Profile ToDo: 
+- [ ] Add graphs when hovering over the coding profile links
 
 Overall Portfolio ToDo:
 - [ ] Add better animations everywhere
 - [ ] Make it more responsive
 - [ ] Add support for dark mode toggle and handle the colors accordingly
+- [ ] Fix navbar transistion when changing pages

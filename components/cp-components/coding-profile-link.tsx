@@ -13,25 +13,43 @@ export default function CodingProfileLink({
   return (
     <Link
       href={codingProfileLink}
-      rel="noopener noreferrer"
       target="_blank"
-      className="p-2 border-2 border-slate-700 rounded-md bg-slate-800 hover:bg-slate-600 min-w-96 mb-4 mr-4 relative transition-all duration-100 transform hover:shadow-2xl"
+      rel="noopener noreferrer"
+      className="group block w-[50%] max-w-2xl"
     >
-      <div className="flex flex-row min-w-96 justify-between">
-        <div className="flex flex-col w-1/2">
-          <div className="text-2xl mb-2">{codingPlatform}</div>
-          <div className="text-xl opacity-75">{handle}</div>
-          <div className="text-xl opacity-50">
-            {highestTag} ({maxRating})
+      <div className="flex items-center w-full min-h-32 bg-transparent border border-white/10 rounded-xl p-4 
+                      hover:border-white/30 hover:bg-white/5 
+                      transition-all duration-300 ease-out
+                      hover:shadow-[0_8px_32px_rgba(255,255,255,0.1)]
+                      hover:translate-x-4 hover:backdrop-blur-sm">
+        
+        <div className="flex flex-col w-3/4 justify-center">
+          <div className="text-2xl font-semibold group-hover:text-white/95 transition-colors duration-200">
+            {codingPlatform}
+          </div>
+          <div className="h-px bg-white/10 mb-2 group-hover:bg-white/20 transition-colors duration-200"></div>
+          <div className="text-lg mb-1 opacity-90 group-hover:opacity-100 transition-opacity duration-200">
+            {handle}
+          </div>
+          <div className="text-sm opacity-60 group-hover:opacity-80 transition-opacity duration-200">
+            {highestTag} • {maxRating}
           </div>
         </div>
-        <div className="w-1/2 flex justify-end items-center relative p-0 m-0">
-          <Image
-            src={iconPath}
-            fill
-            objectFit="contain"
-            alt="Coding Profile Icon"
-          />
+
+        
+        <div className="w-px bg-white/20 self-stretch mx-4 group-hover:bg-white/40 transition-colors duration-200"></div>
+
+        <div className="flex w-1/4 justify-center">
+          <div className="flex items-center justify-center w-20 h-20 rounded-lg bg-white/5 group-hover:bg-white/10 transition-colors duration-200 overflow-hidden">
+            <div className="relative w-16 h-16">
+              <Image 
+                src={iconPath} 
+                alt={codingPlatform}
+                fill
+                className="object-contain group-hover:scale-110 transition-transform duration-200"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </Link>

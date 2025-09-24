@@ -13,7 +13,6 @@ export default function ProjectCard({
   return (
     <div className="group flex flex-col w-[90%] bg-transparent border border-white/10 rounded-2xl p-4 m-2
      hover:border-white/20 transition-all duration-300 
-     hover:border-rounded-lg
      hover:shadow-[0_0_20px_rgba(255,255,255,0.05)]
      hover:bg-white/[0.02] hover:scale-[1.02] hover:-translate-y-1">
 
@@ -50,9 +49,11 @@ export default function ProjectCard({
         </div>
       </div>
 
-      <div className="text-lg opacity-75 mb-4">{description}</div>
+      <div className="text-md opacity-55 mb-4">
+        {description}
+      </div>
 
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2 mt-auto">
         {tags.map((tag) => (
           <div
             key={tag}

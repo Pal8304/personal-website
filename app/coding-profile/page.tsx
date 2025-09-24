@@ -6,9 +6,9 @@ export default function CodingProfile() {
   return (
     <PageTemplate
       title="Coding Profiles"
-      subtitle="My competitive programming profiles"
+      subtitle="WA on testcase 2 prevails"
     >
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap gap-3">
         {CODINGPROFILES.map((profile, index) => {
           return (
             <CodingProfileLink

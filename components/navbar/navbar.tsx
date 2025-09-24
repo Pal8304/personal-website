@@ -11,7 +11,7 @@ export default function Navbar() {
   if (!validPaths.includes(currentPath)) return null;
 
   return (
-    <div className="w-full fixed top-4 flex justify-center items-center">
+    <div className="w-full fixed top-4 flex justify-center items-center z-50">
       <nav className="w-2/3 justify-center overflow-scroll">
         <div className="flex flex-row items-center justify-between m-4 text-2xl rounded-2xl bg-transparent backdrop-blur-md border border-white/10">
           <div>
