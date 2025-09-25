@@ -1,7 +1,8 @@
-import Link from "next/link";
 import getPosts, { getPost } from "../get-posts";
 import { PostBody } from "./post-body";
 import { notFound } from "next/navigation";
+import BlogHeader from "@/components/blog-page/blog-header";
+import BlogFooter from "@/components/blog-page/blog-footer";
 
 export async function generateStaticParams() {
   const posts = await getPosts();
@@ -25,14 +26,7 @@ export default async function PostPage({
   // Pass the post contents to MDX
   return (
     <div className="flex flex-col justify-center items-center w-full h-full">
-      <div className="flex w-2/3 p-2">
-        <Link href="/blog" className="text-2xl ">
-          Blog List
-        </Link>
-        <Link href="/" className="text-lg ml-auto">
-          Back to Portfolio
-        </Link>
-      </div>
+      <BlogHeader /> 
       <div className="w-full border-b-2 opacity-50"> </div>
       <div className="w-2/3 flex flex-col gap-2 mt-4 p-2">
         <div className="text-5xl h-full">{post.title}</div>
@@ -59,9 +53,7 @@ export default async function PostPage({
         {post.content && <PostBody>{post.content}</PostBody>}
       </div>
       <div className="w-full border-b-2 opacity-40"></div>
-      <div className="flex w-2/3 p-2 mb-4">
-        currently a placeholder for footer
-      </div>
+      <BlogFooter />
     </div>
   );
 }
