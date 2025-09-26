@@ -39,7 +39,7 @@ export default function RootLayout({
       <body
         className={`${roboto_mono.className} ${roboto.variable} ${dancing_script.variable}`}
       >
-        <div className="flex min-h-screen">
+        <div className="flex min-h-screen bg-gradient-to-b from-slate-950 via-transparent to-blue-950">
           <Navbar />
           {children}
         </div>
