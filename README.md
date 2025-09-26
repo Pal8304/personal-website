@@ -10,9 +10,11 @@ Blogs ToDo:
 Projects ToDo:
 - [x] Make project links better 
 - [x] Provide better UI to tags
+- [ ] Add deployment link instead of icon for it 
 
 Coding Profile ToDo: 
-- [ ] Add graphs when hovering over the coding profile links
+- [ ] Add graphs when hovering over the coding profile links ( image for now )
+- [ ] Fetch data from the APIs and show them in the graphs
 
 Overall Portfolio ToDo:
 - [ ] Add better animations everywhere

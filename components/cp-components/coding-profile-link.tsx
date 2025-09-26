@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import { CodingProfileLinkProps } from "@/data/types";
@@ -9,13 +10,20 @@ export default function CodingProfileLink({
   iconPath,
   maxRating,
   highestTag,
-}: CodingProfileLinkProps) {
+  codingPlatformHovered,
+  setCodingPlatformHovered,
+}: CodingProfileLinkProps & {
+  codingPlatformHovered: string | null;
+  setCodingPlatformHovered: (platform: string | null) => void;
+}) {
   return (
     <Link
       href={codingProfileLink}
       target="_blank"
       rel="noopener noreferrer"
       className="group block w-[50%] max-w-2xl"
+      onMouseEnter={() => setCodingPlatformHovered(codingPlatform)}
+      onMouseLeave={() => setCodingPlatformHovered(null)}
     >
       <div className="flex items-center w-full min-h-32 bg-transparent border border-white/10 rounded-xl p-4 
                       hover:border-white/30 hover:bg-white/5 
