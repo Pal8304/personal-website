@@ -25,8 +25,8 @@ const dancing_script = Dancing_Script({
 });
 
 export const metadata: Metadata = {
-  title: "Palash",
-  description: "Portfolio of Palash",
+  title: "Palash Jhaveri",
+  description: "Thinking of something catchy",
 };
 
 export default function RootLayout({
@@ -37,9 +37,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${dancing_script.variable} ${roboto.variable} ${roboto_mono.variable}`}
+        className={`${roboto_mono.className} ${roboto.variable} ${dancing_script.variable}`}
       >
-        <div className="flex font-mono min-h-screen">
+        <div className="flex min-h-screen">
           <Navbar />
           {children}
         </div>

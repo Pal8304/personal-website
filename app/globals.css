@@ -1,29 +1,29 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer utilities {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 15, 23, 42;
-    --background-end-rgb: 15, 23, 42;
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --foreground-rgb: 255, 255, 255;
+      --background-start-rgb: 15, 23, 42;
+      --background-end-rgb: 15, 23, 42;
+    }
+  }
+
+  body {
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgb(var(--background-end-rgb))
+      )
+      rgb(var(--background-start-rgb));
+  }
 }
 
 @layer utilities {
@@ -32,31 +32,6 @@ body {
   }
 }
 
-h1 {
-  @apply text-4xl font-bold my-2;
-}
-h2 {
-  @apply text-2xl font-bold my-5;
-}
-h3 {
-  @apply text-xl font-bold my-1;
-}
-h4 {
-  @apply text-lg font-semibold my-1;
-}
-
-hr {
-  @apply my-3 bg-white bg-opacity-30 h-0.5 border-none;
-}
-p {
-  @apply text-lg text-gray-300;
-}
-ul {
-  @apply list-disc list-inside py-2 ml-2 text-gray-300;
-}
-ol {
-  @apply list-decimal list-inside py-2 ml-2 text-gray-300;
-}
-{
-  @apply mb-10 pb-10;
+@theme inline {
+  --font-dancing: var(--font-dancing-script);
 }
