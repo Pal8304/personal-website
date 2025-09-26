@@ -15,6 +15,7 @@ Projects ToDo:
 Coding Profile ToDo: 
 - [ ] Add graphs when hovering over the coding profile links ( image for now )
 - [ ] Fetch data from the APIs and show them in the graphs
+- [ ] Review code of profile-graph component ( very messy and vibe coded )
 
 Overall Portfolio ToDo:
 - [ ] Add better animations everywhere

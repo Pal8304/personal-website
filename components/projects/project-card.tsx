@@ -12,7 +12,7 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   return (
     <div className="group flex flex-col w-[90%] bg-transparent border border-white/10 rounded-2xl p-4 m-2
-     hover:border-white/20 transition-all duration-300 
+     hover:border-white/20 transition-all duration-200 
      hover:shadow-[0_0_20px_rgba(255,255,255,0.05)]
      hover:bg-white/[0.02] hover:scale-[1.02] hover:-translate-y-1">
 
