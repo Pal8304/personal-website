@@ -21,4 +21,4 @@ Overall Portfolio ToDo:
 - [ ] Add better animations everywhere
 - [ ] Make it more responsive
 - [ ] Add support for dark mode toggle and handle the colors accordingly
-- [ ] Fix navbar transistion when changing pages
+- [x] Fix navbar transistion when changing pages
