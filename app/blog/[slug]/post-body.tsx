@@ -18,7 +18,7 @@ export function PostBody({ children }: { children: string }) {
             //   // Makes emojis more accessible
             //   remarkA11yEmoji,
             // generates a table of contents based on headings
-            remarkToc,
+            [remarkToc,{tight: true}],
           ],
           // These work together to add IDs and linkify headings
           rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
