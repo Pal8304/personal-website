@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Inter, Roboto_Mono, Roboto, Dancing_Script } from "next/font/google";
 import Navbar from "../components/navbar/navbar";
+import Cursor from "@/components/cursor";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -42,6 +43,7 @@ export default function RootLayout({
         <div className="flex min-h-screen bg-gradient-to-b from-slate-950 via-transparent to-blue-950">
           <Navbar />
           {children}
+          <Cursor />
         </div>
       </body>
     </html>

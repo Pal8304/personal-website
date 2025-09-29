@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @layer utilities {
   :root {
@@ -35,3 +35,10 @@
 @theme inline {
   --font-dancing: var(--font-dancing-script);
 }
+
+@layer base {
+  * {
+    @apply cursor-none;
+  }
+}
+
