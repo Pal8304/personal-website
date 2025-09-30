@@ -3,7 +3,7 @@ My Portfolio Site
 Blogs ToDo: 
 
 - [ ] Add animations in blog page, specifically while blog is loaded, when switching 2 codes.
-- [ ] Construct overview( index table ) of the blog based on headers.
+- [x] Construct overview( index table ) of the blog based on headers.
 - [ ] Improve the structure of blog like add h1 tags etc 
 - [ ] Make the urls in blogs better
 - [ ] Add footer in blog page
@@ -14,7 +14,7 @@ Projects ToDo:
 - [ ] Add deployment link instead of icon for it 
 
 Coding Profile ToDo: 
-- [ ] Add graphs when hovering over the coding profile links ( image for now )
+- [x] Add graphs when hovering over the coding profile links ( image for now )
 - [ ] Fetch data from the APIs and show them in the graphs
 - [ ] Review code of profile-graph component ( very messy and vibe coded )
 

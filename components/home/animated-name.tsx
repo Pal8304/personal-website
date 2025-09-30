@@ -20,7 +20,7 @@ export default function AnimatedName({ name }: AnimatedNameProps) {
       if (!el) return;
 
       gsap.to(el, {
-        duration: 3,
+        duration: 2,
         ease: "power2.out",
         scrambleText: {
           text: name,
