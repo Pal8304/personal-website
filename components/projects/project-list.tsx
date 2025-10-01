@@ -14,26 +14,31 @@ export default function ProjectList() {
       const container = containerRef.current;
       if (!container) return;
 
-      const cards = gsap.utils.toArray<HTMLElement>(".project-card");
-
-      cards.forEach((card) => {
-        const tags = card.querySelectorAll<HTMLElement>(".tag-item");
-
-        const tl = gsap.timeline({});
-
-        tl.from(card, {
-            opacity: 0,
-            duration: 0.5,
-        }).from(tags, {
-          opacity: 0,
-          y: 8,
-          duration: 0.35,
-          stagger: 0.06,
-          ease: "power2.out",
-        });
+      const wrappers = gsap.utils.toArray<HTMLElement>(".project-card-wrapper");
+      const tl = gsap.timeline();
+      tl.from(wrappers, {
+        autoAlpha: 0,
+        y: 25,
+        duration: 0.6,
+        ease: "power3.out",
+        stagger: 0.15,
       });
 
-      gsap.from(container, { opacity: 0, duration: 0.5, delay: 0.05 });
+      wrappers.forEach((wrapper) => {
+        const tags = wrapper.querySelectorAll<HTMLElement>(".project-tag");
+        tl.from(
+          tags,
+          {
+            autoAlpha: 0,
+            y: 12,
+            scale: 0.95,
+            duration: 0.4,
+            ease: "back.out(1.7)",
+            stagger: 0.08,
+          },
+          ">-0.25"
+        );
+      });
     },
     { scope: containerRef }
   );
@@ -41,14 +46,19 @@ export default function ProjectList() {
   return (
     <div ref={containerRef} className="w-full flex flex-wrap overflow-auto">
       {PROJECTS.map((project, i) => (
-        <ProjectCard
+        <div
           key={i}
-          title={project.title}
-          deployLink={project.deployLink}
-          githubLink={project.githubLink}
-          description={project.description}
-          tags={project.tags}
-        />
+          className="project-card-wrapper w-full flex"
+        >
+          <ProjectCard
+            key={i}
+            title={project.title}
+            deployLink={project.deployLink}
+            githubLink={project.githubLink}
+            description={project.description}
+            tags={project.tags}
+          />
+        </div>
       ))}
     </div>
   );

@@ -56,7 +56,7 @@ export default function ProjectCard({
         {tags.map((tag) => (
           <div
             key={tag}
-            className="tag-item text-sm px-3 py-1 rounded-full bg-white/10 text-white/80 border border-white/20 hover:bg-white/15 transition-colors duration-200"
+            className="project-tag text-sm px-3 py-1 rounded-full bg-white/10 text-white/80 border border-white/20 hover:bg-white/15 transition-colors duration-200"
           >
             {tag}
           </div>

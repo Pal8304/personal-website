@@ -1,4 +1,4 @@
-import BlogLink from "../../components/blog-list/blog-link";
+import BlogList from "@/components/blog-list/blog-list";
 import PageTemplate from "../../components/page-template";
 
 import getPosts from "./get-posts";
@@ -16,24 +16,11 @@ export default async function Blog() {
   });
   // console.log(blogs);
   return (
-    <PageTemplate 
-      title="Blogs" 
+    <PageTemplate
+      title="Blogs"
       subtitle="My weird thoughts and ideas on the internet"
     >
-      <div className="flex flex-col items-start justify-start gap-2 overflow-scroll">
-        {blogs.map((blog, index) => {
-          return (
-            <BlogLink
-              key={index}
-              blogtitle={blog.title}
-              blogsubtitle={blog.subtitle}
-              blogurl={`/blog/${blog.slug}`}
-              blogdate={blog.date}
-              blogtags={blog.tags}
-            />
-          );
-        })}
-      </div> 
+      <BlogList blogs={blogs} />
     </PageTemplate>
   );
 }
