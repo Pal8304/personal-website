@@ -28,6 +28,9 @@ const dancing_script = Dancing_Script({
 export const metadata: Metadata = {
   title: "Palash Jhaveri",
   description: "Thinking of something catchy",
+  icons: {
+    icon: "/palj.ico",
+  },
 };
 
 export default function RootLayout({
@@ -40,7 +43,7 @@ export default function RootLayout({
       <body
         className={`${roboto_mono.className} ${roboto.variable} ${dancing_script.variable}`}
       >
-        <div className="flex min-h-screen bg-gradient-to-b from-slate-950 via-transparent to-blue-950">
+        <div className="flex min-h-screen bg-[conic-gradient(at_bottom_right,_var(--tw-gradient-stops))] from-[#1d4ed8] via-[#1e40af] to-[#111827]">
           <Navbar />
           {children}
           <Cursor />
