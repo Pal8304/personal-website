@@ -13,52 +13,58 @@ export default function Cursor() {
   const [followerCSS, setFollowerCSS] = useState<string>(
     getCompleteFollowerCSS("default")
   );
+  const [elementWidth, setElementWidth] = useState<number>(0);
 
   function getCompleteCursorCSS(shape: string): string {
     const baseCSS: string =
-      "pointer-events-none fixed z-50 -translate-x-1/2 -translate-y-1/2 rounded-full mix-blend-difference";
+      "pointer-events-none fixed z-50 mix-blend-difference transition-all duration-300 ease-out";
     switch (shape) {
       case "account-link":
-        return `${baseCSS} bg-white border-2 border-white h-8 w-8`;
+        return `${baseCSS} rounded-full bg-white h-10 w-10`;
       case "navbar-item":
-        return `${baseCSS} h-7 w-7 border-2 border-white bg-white`;
+        return `${baseCSS} rounded-full h-2 w-2 bg-white`;
       case "default":
-        return `${baseCSS} h-5 w-5 bg-white`;
+        return `${baseCSS} rounded-full h-5 w-5 bg-white`;
       default:
-        return `${baseCSS} h-5 w-5 bg-white`;
+        return `${baseCSS} rounded-full h-5 w-5 bg-white`;
     }
   }
 
   function getCompleteFollowerCSS(shape: string): string {
     const baseCSS: string =
-      "pointer-events-none fixed z-50 -translate-x-1/2 -translate-y-1/2 rounded-full mix-blend-difference";
+      "pointer-events-none fixed z-50 mix-blend-difference transition-all duration-400 ease-out";
     switch (shape) {
       case "account-link":
-        return `${baseCSS} bg-white h-14 w-14 rounded-full border-2 border-white`;
+        return `${baseCSS} rounded-full bg-transparent h-16 w-16 border-2 border-white`;
       case "navbar-item":
-        return `${baseCSS} h-12 w-12 rounded-full border-2 border-white bg-transparent`;
+        return `${baseCSS} rounded-full h-12 bg-white/20 border border-white/40`;
       case "default":
       default:
-        return `${baseCSS} h-12 w-12 -translate-x-1/2 -translate-y-1/2 rounded-full border-1 bg-transparent border-white mix-blend-difference`;
+        return `${baseCSS} rounded-full h-12 w-12 border border-white bg-transparent`;
     }
   }
 
   useGSAP(
     () => {
-      const cursorXSetter = gsap.quickTo(cursorRef.current, "x", {
+      gsap.set([cursorRef.current, followerRef.current], {
+        xPercent: -50,
+        yPercent: -50,
+      });
+
+      const cursorXSetter = gsap.quickTo(cursorRef.current, "left", {
         duration: 0.1,
         ease: "power3",
       });
-      const cursorYSetter = gsap.quickTo(cursorRef.current, "y", {
+      const cursorYSetter = gsap.quickTo(cursorRef.current, "top", {
         duration: 0.1,
         ease: "power3",
       });
 
-      const followerXSetter = gsap.quickTo(followerRef.current, "x", {
+      const followerXSetter = gsap.quickTo(followerRef.current, "left", {
         duration: 0.4,
         ease: "power3",
       });
-      const followerYSetter = gsap.quickTo(followerRef.current, "y", {
+      const followerYSetter = gsap.quickTo(followerRef.current, "top", {
         duration: 0.4,
         ease: "power3",
       });
@@ -74,11 +80,20 @@ export default function Cursor() {
 
         const target = e.target as HTMLElement;
         let cursorAttribute = target.getAttribute("data-cursor");
+        let element: HTMLElement | null = target;
+
         if (!cursorAttribute) {
-          cursorAttribute =
-            target.closest("[data-cursor]")?.getAttribute("data-cursor") ||
-            "default";
+          element = target.closest("[data-cursor]");
+          cursorAttribute = element?.getAttribute("data-cursor") || "default";
         }
+
+        if (cursorAttribute === "navbar-item" && element) {
+          const rect = element.getBoundingClientRect();
+          setElementWidth(rect.width + 44);
+        } else {
+          setElementWidth(0);
+        }
+
         setCursorCSS(getCompleteCursorCSS(cursorAttribute));
         setFollowerCSS(getCompleteFollowerCSS(cursorAttribute));
       });
@@ -88,7 +103,12 @@ export default function Cursor() {
   return (
     <>
       <div id="cursor" ref={cursorRef} className={cursorCSS}></div>
-      <div id="follower" ref={followerRef} className={followerCSS}></div>
+      <div
+        id="follower"
+        ref={followerRef}
+        className={followerCSS}
+        style={elementWidth > 0 ? { width: `${elementWidth}px` } : undefined}
+      ></div>
     </>
   );
 }
