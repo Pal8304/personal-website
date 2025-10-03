@@ -2,6 +2,7 @@ import Link from "next/link";
 import { MDXComponents } from "mdx/types";
 import { Tabs } from "@/components/tabs-copied/tabs";
 import { Code } from "bright";
+import { TabsWrapper } from "@/components/tabs-copied/bright-tabs-extension";
 Code.lineNumbers = true;
 Code.theme = "dracula";
 
@@ -71,6 +72,6 @@ export const mdxComponents: MDXComponents = {
   //     return <Image {...props} />
   //   },
   pre: Code,
-  Tabs: Tabs,
+  Tabs: TabsWrapper,
   // any other components you want to use in your markdown
 };

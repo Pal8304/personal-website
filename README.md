@@ -7,6 +7,7 @@ Blogs ToDo:
 - [ ] Improve the structure of blog like add h1 tags etc 
 - [ ] Make the urls in blogs better
 - [ ] Add footer in blog page
+- [ ] Check out: https://markdoc.dev/docs/nextjs, https://andrelandgraf.dev/blog/2024-11-01_rendering-markdown-in-remix for another way to write blogs
 
 Projects ToDo:
 - [x] Make project links better 

@@ -13,9 +13,7 @@ export default function ProfileGraph({
   const graphPath = `/${codingPlatformHovered.toLowerCase()}-graph.png`;
 
   return (
-    <div
-      className="pointer-events-none absolute left-[calc(50%+2rem)] top-[95%] -translate-y-1/2"
-    >
+    <div className="pointer-events-none absolute left-[calc(50%+2rem)] top-[95%] -translate-y-1/2">
       <div
         className="min-w-96 bg-transparent border border-white/10 rounded-xl p-4 backdrop-blur-sm 
                     hover:border-white/20 hover:bg-white/5 
