@@ -26,7 +26,7 @@ export default async function PostPage({
   // Pass the post contents to MDX
   return (
     <div className="flex flex-col justify-center items-center w-full h-full">
-      <BlogHeader /> 
+      <BlogHeader />
       <div className="w-full border-b-2 opacity-50"> </div>
       <div className="w-2/3 flex flex-col gap-2 mt-4 p-2">
         <div className="text-5xl h-full">{post.title}</div>

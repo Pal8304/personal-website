@@ -25,7 +25,7 @@ export default function BlogList({
       if (!el) return;
 
       const blogWrappers = Array.from(
-        el.querySelectorAll<HTMLElement>(".blog-link-wrapper")
+        el.querySelectorAll<HTMLElement>(".blog-link-wrapper"),
       );
 
       const tl = gsap.timeline();
@@ -50,7 +50,7 @@ export default function BlogList({
         });
       });
     },
-    { scope: container }
+    { scope: container },
   );
 
   return (

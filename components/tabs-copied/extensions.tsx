@@ -2,15 +2,15 @@ import { Code } from "bright";
 import { TabsRoot, TabsContent, TabsList } from "./client";
 
 /** @type {import("bright").BrightProps["TitleBarContent"]} */
-function TitleBarComponent(brightProps : any) {
+function TitleBarComponent(brightProps: any) {
   const { subProps, title, Tab } = brightProps;
   const titles = subProps?.length
-    ? subProps.map((subProp : any) => subProp.title)
+    ? subProps.map((subProp: any) => subProp.title)
     : [title];
   const childProps = subProps?.length ? subProps : [brightProps];
   return (
     <TabsList titles={titles}>
-      {titles.map((title : string, i : number) => (
+      {titles.map((title: string, i: number) => (
         <Tab key={title} {...childProps[i]} />
       ))}
     </TabsList>
@@ -18,11 +18,11 @@ function TitleBarComponent(brightProps : any) {
 }
 
 /** @type {import("bright").BrightProps["Root"]} */
-function Root(brightProps : any) {
+function Root(brightProps: any) {
   const { subProps, title } = brightProps;
 
   const titles = subProps?.length
-    ? subProps.map((subProp : any) => subProp.title)
+    ? subProps.map((subProp: any) => subProp.title)
     : [title];
 
   return (
@@ -44,12 +44,12 @@ function Root(brightProps : any) {
 }
 
 /** @type {import("bright").BrightProps["Pre"]} */
-function Content(brightProps : any) {
+function Content(brightProps: any) {
   const { subProps } = brightProps;
   const propsList = subProps?.length ? subProps : [brightProps];
   return (
     <>
-      {propsList.map((props : any) => (
+      {propsList.map((props: any) => (
         <TabsContent key={props.title} value={props.title}>
           {Code.Pre && Code.Pre(props)}
         </TabsContent>

@@ -7,9 +7,7 @@ export default function AboutMe() {
         interest in competitive programming and problem solving. I am also
         starting to explore world of web-dev.
       </div>
-      <div>
-        Need to add something, just don&apos;t know what.
-      </div>
+      <div>Need to add something, just don&apos;t know what.</div>
     </div>
   );
 }

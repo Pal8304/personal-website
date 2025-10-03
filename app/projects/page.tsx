@@ -3,11 +3,11 @@ import ProjectList from "@/components/projects/project-list";
 
 export default function Project() {
   return (
-    <PageTemplate 
-      title="Projects" 
+    <PageTemplate
+      title="Projects"
       subtitle="The debacles I create when an idea hits me"
     >
-     <ProjectList /> 
+      <ProjectList />
     </PageTemplate>
   );
 }

@@ -20,7 +20,7 @@ export default function CodingProfileList({
       if (!container) return;
 
       const wrapper = Array.from(
-        container.querySelectorAll<HTMLElement>(".coding-link-wrapper")
+        container.querySelectorAll<HTMLElement>(".coding-link-wrapper"),
       );
 
       const tl = gsap.timeline();
@@ -33,7 +33,7 @@ export default function CodingProfileList({
         stagger: 0.15,
       });
     },
-    { scope: containerRef }
+    { scope: containerRef },
   );
 
   return (

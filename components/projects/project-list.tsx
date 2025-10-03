@@ -36,20 +36,17 @@ export default function ProjectList() {
             ease: "back.out(1.7)",
             stagger: 0.08,
           },
-          ">-0.25"
+          ">-0.25",
         );
       });
     },
-    { scope: containerRef }
+    { scope: containerRef },
   );
 
   return (
     <div ref={containerRef} className="w-full flex flex-wrap overflow-auto">
       {PROJECTS.map((project, i) => (
-        <div
-          key={i}
-          className="project-card-wrapper w-full flex"
-        >
+        <div key={i} className="project-card-wrapper w-full flex">
           <ProjectCard
             key={i}
             title={project.title}

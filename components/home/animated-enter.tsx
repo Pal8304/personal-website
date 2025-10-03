@@ -24,7 +24,7 @@ export default function AnimatedEnter({
       if (!el) return;
 
       const reduce = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
+        "(prefers-reduced-motion: reduce)",
       ).matches;
 
       if (!reduce) {
@@ -44,7 +44,7 @@ export default function AnimatedEnter({
         gsap.from(el, fromVars);
       }
     },
-    { scope: ref }
+    { scope: ref },
   );
 
   return (

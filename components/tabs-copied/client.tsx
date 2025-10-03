@@ -10,7 +10,9 @@ export function TabsRoot({
   children: React.ReactNode;
   defaultValue: string;
 }) {
-  return <RadixTabs.Root defaultValue={defaultValue}>{children}</RadixTabs.Root>;
+  return (
+    <RadixTabs.Root defaultValue={defaultValue}>{children}</RadixTabs.Root>
+  );
 }
 
 /**
@@ -47,7 +49,13 @@ export function TabsList({
  * - wraps content and makes it the actual Tabs.Content via asChild.
  * - no animation here (keeps behavior simple & robust)
  */
-export function TabsContent({ value, children }: { value: string; children: React.ReactNode }) {
+export function TabsContent({
+  value,
+  children,
+}: {
+  value: string;
+  children: React.ReactNode;
+}) {
   return (
     <RadixTabs.Content value={value} asChild>
       <div style={{ width: "100%" }}>{children}</div>

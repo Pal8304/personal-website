@@ -8,10 +8,10 @@ export default function Cursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
   const followerRef = useRef<HTMLDivElement>(null);
   const [cursorCSS, setCursorCSS] = useState<string>(
-    getCompleteCursorCSS("default")
+    getCompleteCursorCSS("default"),
   );
   const [followerCSS, setFollowerCSS] = useState<string>(
-    getCompleteFollowerCSS("default")
+    getCompleteFollowerCSS("default"),
   );
   const [elementWidth, setElementWidth] = useState<number>(0);
 
@@ -98,7 +98,7 @@ export default function Cursor() {
         setFollowerCSS(getCompleteFollowerCSS(cursorAttribute));
       });
     },
-    { scope: cursorRef }
+    { scope: cursorRef },
   );
   return (
     <>

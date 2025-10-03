@@ -19,7 +19,7 @@ export const ICON_MAP: Record<string, React.ReactNode> = {
 /** Return icon by filename (e.g. "Approach1.cpp") or fallback. */
 export function getIconFromTitle(
   title?: string,
-  lang?: string
+  lang?: string,
 ): React.ReactNode {
   if (!title && !lang) return ICON_MAP.default;
   if (lang) {

@@ -31,7 +31,7 @@ export default function AnimatedName({ name }: AnimatedNameProps) {
         },
       });
     },
-    { scope: ref }
+    { scope: ref },
   );
   return (
     <div ref={ref} className="text-8xl mt-4">

@@ -9,7 +9,7 @@ export default function HeyThere() {
       <AnimatedEnter from="top">
         <div>Hey there, {`I'm`}</div>
       </AnimatedEnter>
-      
+
       <AnimatedName name="Palash Jhaveri" />
 
       <div className="mt-4 gap-8 flex flex-row">
