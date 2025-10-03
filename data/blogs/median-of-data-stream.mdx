@@ -5,6 +5,8 @@ Date: 2023-06-28
 Tags: ["C++", "Data Structures", "Heaps", "Multisets"]
 ---
 
+## Table of Contents
+
 Let's think of a question :-
 
 ## Problem Statement
@@ -50,6 +52,21 @@ Thus the complexity of adding and removing the integers will be O(logn) and find
         return 0;
     }
 
+    ```
+
+    ```py/Approach1.py
+    import bisect
+    def add_number(stream, x):
+        bisect.insort(stream, x)
+    def remove_number(stream, x):
+        stream.remove(x)
+    n = int(input())
+    stream = []
+    for _ in range(n):
+        x = int(input())
+        add_number(stream, x)
+        print("Median :", stream[len(stream)//2])
+    return 0
     ```
 
     ```cpp/Approach2.cpp
@@ -128,6 +145,7 @@ Thus the complexity of adding and removing the integers will be O(logn) and find
 
 </Tabs>
 
+## Related Problems
 
 Some problems related to this question are :-
 

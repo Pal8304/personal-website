@@ -1,29 +1,19 @@
-import CodingProfileLink from "../../components/cp-components/coding-profile-link";
+"use client";
+
+import { useState } from "react";
 import PageTemplate from "../../components/page-template";
-import { CODINGPROFILES } from "../../data/constants";
+import CodingProfileList from "@/components/cp-components/coding-profile-list";
 
 export default function CodingProfile() {
+  const [codingPlatformHovered, setCodingPlatformHovered] = useState<
+    string | null
+  >(null);
   return (
-    <PageTemplate
-      title="Coding Profiles"
-      subtitle="WA on testcase 2 prevails"
-    >
-      <div className="flex flex-wrap gap-3">
-        {CODINGPROFILES.map((profile, index) => {
-          return (
-            <CodingProfileLink
-              key={index}
-              codingPlatform={profile.codingPlatform}
-              codingProfileLink={profile.codingProfileLink}
-              handle={profile.handle}
-              iconPath={profile.iconPath}
-              highestTag={profile.highestTag}
-              maxRating={profile.maxRating}
-            />
-          );
-        })}
-      </div>
-      {/* <CPAchievements /> */}
+    <PageTemplate title="Coding Profiles" subtitle="WA on testcase 2 prevails">
+      <CodingProfileList
+        codingPlatformHovered={codingPlatformHovered}
+        setCodingPlatformHovered={setCodingPlatformHovered}
+      />
     </PageTemplate>
   );
 }

@@ -12,7 +12,7 @@ export default function BlogLink({
 }: BlogLinkProps) {
   return (
     <Link
-      className="w-[90%] group flex items-center justify-between py-4 group-hover:rounded-lg group-hover:ml-4 group-hover:ease-out duration-200"
+      className="blog-link w-[90%] group flex items-center justify-between py-4 group-hover:rounded-lg group-hover:ml-4 group-hover:ease-out duration-200"
       href={blogurl}
     >
       <div className="flex flex-col gap-2">
@@ -20,13 +20,11 @@ export default function BlogLink({
           <ArrowRight className="w-0 opacity-0 transition-all duration-200 group-hover:w-8 group-hover:mr-2 group-hover:opacity-100" />
           {blogtitle}
         </div>
-        <div className="text-l opacity-75 mb-1">
-          {blogsubtitle}
-        </div>
+        <div className="text-l opacity-75 mb-1">{blogsubtitle}</div>
         <div className="flex gap-2">
           {blogtags.map((tag) => (
             <div
-              className="border px-2 py-0.5 rounded-lg font-light opacity-50"
+              className="blog-tag border px-2 py-0.5 rounded-lg font-light opacity-50"
               key={tag}
             >
               {tag}

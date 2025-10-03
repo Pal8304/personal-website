@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Inter, Roboto_Mono, Roboto, Dancing_Script } from "next/font/google";
 import Navbar from "../components/navbar/navbar";
+import Cursor from "@/components/cursor";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,8 +26,11 @@ const dancing_script = Dancing_Script({
 });
 
 export const metadata: Metadata = {
-  title: "Palash",
-  description: "Portfolio of Palash",
+  title: "Palash Jhaveri",
+  description: "Thinking of something catchy",
+  icons: {
+    icon: "/palj.ico",
+  },
 };
 
 export default function RootLayout({
@@ -37,11 +41,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${dancing_script.variable} ${roboto.variable} ${roboto_mono.variable}`}
+        className={`${roboto_mono.className} ${roboto.variable} ${dancing_script.variable}`}
       >
-        <div className="flex font-mono min-h-screen">
+        <div className="flex min-h-screen bg-[conic-gradient(at_bottom_right,_var(--tw-gradient-stops))] from-[#1d4ed8] via-[#1e40af] to-[#111827]">
           <Navbar />
           {children}
+          <Cursor />
         </div>
       </body>
     </html>

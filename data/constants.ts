@@ -77,14 +77,7 @@ export const PROJECTS: ProjectCardProps[] = [
     title: "Tower_of_Hanoi",
     description: "A simple tower of hanoi game simulator",
     tags: ["HTML", "CSS", "Javascript"],
-  },
-  // {
-  //   deployLink: "https://pal8304.github.io/Sorting_Visualizer/",
-  //   githubLink: "",
-  //   title: "Sorting_Visualizer",
-  //   description: "A sorting visualizer",
-  //   tags: ["HTML", "CSS", "Javascript"],
-  // },
+  }, 
 ];
 
 export const CODINGPROFILES: CodingProfileLinkProps[] = [

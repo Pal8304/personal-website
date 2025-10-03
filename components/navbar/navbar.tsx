@@ -2,12 +2,12 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { NAV_ITEMS, PORTFOLIO_TITLE } from "../../data/constants";
-import NavItem from "./nav-item";
+import NavbarItem from "./navbar-item";
 
 export default function Navbar() {
   const currentPath = usePathname();
-  const validPaths = NAV_ITEMS.map(item => item.href);
-  
+  const validPaths = NAV_ITEMS.map((item) => item.href);
+
   if (!validPaths.includes(currentPath)) return null;
 
   return (
@@ -21,11 +21,7 @@ export default function Navbar() {
           </div>
           <div className="p-4">
             {NAV_ITEMS.map((item) => (
-              <NavItem
-                key={item.href}
-                href={item.href}
-                label={item.label}
-              />
+              <NavbarItem key={item.href} href={item.href} label={item.label} />
             ))}
           </div>
         </div>
