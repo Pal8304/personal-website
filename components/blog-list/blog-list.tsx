@@ -56,7 +56,7 @@ export default function BlogList({
   return (
     <div
       ref={container}
-      className="flex flex-col items-start justify-start gap-2 overflow-scroll"
+      className="flex flex-col items-start justify-start gap-2 overflow-hidden w-full"
     >
       {blogs.map((blog, index) => {
         return (

@@ -20,7 +20,10 @@ Coding Profile ToDo:
 - [ ] Review code of profile-graph component ( very messy and vibe coded )
 
 Overall Portfolio ToDo:
-- [ ] Add better animations everywhere
+- [x] Add basic animations everywhere
+- [ ] Make the animations better now 
 - [ ] Make it more responsive
 - [ ] Add support for dark mode toggle and handle the colors accordingly
+- [x] Add custom cursor 
+- [ ] Try cursor with gsap later on
 - [x] Fix navbar transistion when changing pages
