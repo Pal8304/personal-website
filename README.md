@@ -27,3 +27,4 @@ Overall Portfolio ToDo:
 - [x] Add custom cursor 
 - [ ] Try cursor with gsap later on
 - [x] Fix navbar transistion when changing pages
+- [ ] Check out https://reactbits.dev/get-started/introduction in a different branch here
