@@ -34,6 +34,9 @@
 
 @theme inline {
   --font-dancing: var(--font-dancing-script);
+  --font-fantasque: var(--font-fantasque-sans);
+  --font-roboto: var(--font-roboto);
+  --font-roboto-mono: var(--font-roboto-mono);
 }
 
 @layer base {

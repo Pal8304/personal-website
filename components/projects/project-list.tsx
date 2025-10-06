@@ -44,7 +44,7 @@ export default function ProjectList() {
   );
 
   return (
-    <div ref={containerRef} className="w-full flex flex-wrap overflow-auto">
+    <div ref={containerRef} className="w-full flex flex-wrap overflow-hidden">
       {PROJECTS.map((project, i) => (
         <div key={i} className="project-card-wrapper w-full flex">
           <ProjectCard

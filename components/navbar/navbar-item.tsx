@@ -15,8 +15,8 @@ export default function NavbarItem({ href, label }: NavbarItemProps) {
         <Link
           href={href}
           className="m-7 relative opacity-100 rounded-3xl 
-                   before:absolute before:content-['<'] before:-left-4 before:top-0 
-                   after:absolute after:content-['/>'] after:-right-7 after:top-0"
+                   before:absolute before:content-['<'] before:-left-4 before:top-[-4px] 
+                   after:absolute after:content-['/>'] after:-right-7 after:top-[-4px]"
           data-cursor="navbar-item"
         >
           {label}

@@ -13,6 +13,7 @@ const config: Config = {
         mono: ['var(--font-roboto-mono)'],
         roboto: ['var(--font-roboto)'],
         dancing: ['var(--font-dancing-script)'],
+        fantasque: ['var(--font-fantasque-sans)'],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
