@@ -13,13 +13,14 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function PostPage({
-  params,
-}: {
-  params: {
-    slug: string;
-  };
-}) {
+export default async function PostPage(
+  props: {
+    params: Promise<{
+      slug: string;
+    }>;
+  }
+) {
+  const params = await props.params;
   const post = await getPost(params.slug);
   // notFound is a Next.js utility
   if (!post) return notFound();
