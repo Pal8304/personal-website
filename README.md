@@ -4,9 +4,11 @@ Blogs ToDo:
 
 - [ ] Add animations in blog page, specifically while blog is loaded, when switching 2 codes.
 - [x] Construct overview( index table ) of the blog based on headers.
-- [ ] Improve the structure of blog like add h1 tags etc 
+- [x] Improve the structure of blog like add h1 tags etc 
 - [ ] Make the urls in blogs better
 - [ ] Add footer in blog page
+- [ ] Add filter based on tags
+- [ ] Rewrite all blogs and add more blogs
 - [ ] Check out: https://markdoc.dev/docs/nextjs, https://andrelandgraf.dev/blog/2024-11-01_rendering-markdown-in-remix for another way to write blogs
 
 Projects ToDo:

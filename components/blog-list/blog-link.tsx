@@ -14,6 +14,7 @@ export default function BlogLink({
     <Link
       className="blog-link w-[90%] group flex items-center justify-between py-4 group-hover:rounded-lg group-hover:ml-4 group-hover:ease-out duration-200"
       href={blogurl}
+      data-cursor="clickable"
     >
       <div className="flex flex-col gap-2">
         <div className="flex flex-row items-center font-bold text-3xl">

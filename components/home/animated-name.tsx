@@ -34,7 +34,7 @@ export default function AnimatedName({ name }: AnimatedNameProps) {
     { scope: ref },
   );
   return (
-    <div ref={ref} className="text-8xl mt-4">
+    <div ref={ref} className="text-8xl mt-4 text-shadow-lg/30 font-semibold">
       {name}
     </div>
   );

@@ -24,6 +24,7 @@ export default function CodingProfileLink({
       className="group block w-[50%] max-w-2xl"
       onMouseEnter={() => setCodingPlatformHovered(codingPlatform)}
       onMouseLeave={() => setCodingPlatformHovered(null)}
+      data-cursor="coding-profile-link"
     >
       <div
         className="flex items-center w-full min-h-32 bg-transparent border border-white/10 rounded-xl p-4 
