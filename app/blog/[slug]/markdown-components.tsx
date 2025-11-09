@@ -12,9 +12,7 @@ export const mdxComponents: MDXComponents = {
       <Link
         {...props}
         href={props.href || ""}
-        className="hover:opacity-80"
-        rel="noopener noreferrer"
-        target="_blank"
+        className="hover:opacity-80" 
       >
         {children}
       </Link>

@@ -1,5 +1,5 @@
-"use client";
 import Image from "next/image";
+import RatingGraph from "./rating-graph";
 
 export default function ProfileGraph({
   codingPlatformHovered,
@@ -32,15 +32,21 @@ export default function ProfileGraph({
           </div>
           <div className="h-px bg-white/15 mt-2"></div>
         </div>
-        <div className="relative w-full h-48 rounded-lg overflow-hidden bg-white/5 border border-white/10 group">
-          <Image
-            src={graphPath}
-            alt={`${codingPlatformHovered} rating graph`}
-            fill
-            objectFit="fill"
-            className="object-cover group-hover:scale-[1.02] transition-transform duration-300"
-          />
-        </div>
+        {codingPlatformHovered === "Codeforces" ? (
+          <div className="relative w-full h-48 rounded-lg overflow-hidden bg-white/5 border border-white/10 group">
+            <RatingGraph />
+          </div>
+        ) : (
+          <div className="relative w-full h-48 rounded-lg overflow-hidden bg-white/5 border border-white/10 group">
+            <Image
+              src={graphPath}
+              alt={`${codingPlatformHovered} rating graph`}
+              fill
+              objectFit="fill"
+              className="object-cover group-hover:scale-[1.02] transition-transform duration-300"
+            />
+          </div>
+        )}
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import { CPAchievementsCardProps } from "./types";
 import { CodingProfileLinkProps } from "./types";
 import { NavItemProps } from "./types";
 
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail } from "lucide-react";
 
 export const NAV_ITEMS: NavItemProps[] = [
   {
@@ -25,7 +25,7 @@ export const NAV_ITEMS: NavItemProps[] = [
   },
 ];
 
-export const PORTFOLIO_TITLE = "Portfolio";
+export const PORTFOLIO_TITLE = "Palash Jhaveri";
 
 export const SOCIALS: AccountLinkProps[] = [
   {
@@ -37,9 +37,13 @@ export const SOCIALS: AccountLinkProps[] = [
     Icon: Linkedin,
   },
   {
-    externalLink: "https://twitter.com/PalJ_08",
+    externalLink: "https://x.com/PalashJhaveri",
     Icon: Twitter,
   },
+  {
+    externalLink: "mailto: palashjhaveri04@gmail.com", 
+    Icon: Mail,
+  }
 ];
 
 export const PROJECTS: ProjectCardProps[] = [

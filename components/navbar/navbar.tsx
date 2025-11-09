@@ -7,8 +7,8 @@ import NavbarItem from "./navbar-item";
 export default function Navbar() {
   const currentPath = usePathname();
   const validPaths = NAV_ITEMS.map((item) => item.href);
-
-  if (!validPaths.includes(currentPath)) return null;
+  
+  if (!validPaths.includes(currentPath) && !currentPath.startsWith("/blog/")) return null; // ToDo: Add a better way to handle this for blog posts
 
   return (
     <div className="w-full fixed top-4 flex justify-center items-center z-50">

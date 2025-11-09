@@ -10,13 +10,8 @@ interface NavbarItemProps {
 
 export default function NavbarItem({ href, label }: NavbarItemProps) {
   const currentPath = usePathname();
-  const [mounted, setMounted] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const isActive = mounted && currentPath === href;
+  const isActive = currentPath === href;
 
   return (
     <Link

@@ -8,20 +8,26 @@ export default function Cursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
   const followerRef = useRef<HTMLDivElement>(null);
   const [cursorCSS, setCursorCSS] = useState<string>(
-    getCompleteCursorCSS("default"),
+    getCompleteCursorCSS("default")
   );
   const [followerCSS, setFollowerCSS] = useState<string>(
-    getCompleteFollowerCSS("default"),
+    getCompleteFollowerCSS("default")
   );
   const [elementWidth, setElementWidth] = useState<number>(0);
 
   function getCompleteCursorCSS(shape: string): string {
     const baseCSS: string =
-      "pointer-events-none fixed z-50 mix-blend-difference transition-all duration-300 ease-out";
+      "pointer-events-none fixed z-50 mix-blend-difference transition-all duration-300 ease-out ease-in";
     switch (shape) {
       case "account-link":
-        return `${baseCSS} rounded-full bg-white h-10 w-10`;
+        return `${baseCSS} rounded-full bg-white h-2 w-2`;
       case "navbar-item":
+        return `${baseCSS} rounded-full h-2 w-2 bg-white`;
+      case "coding-profile-link":
+        return `${baseCSS} rounded-full h-2 w-2 bg-white`;
+      case "project-card":
+        return `${baseCSS} rounded-full h-2 w-2 bg-white`;
+      case "clickable":
         return `${baseCSS} rounded-full h-2 w-2 bg-white`;
       case "default":
         return `${baseCSS} rounded-full h-5 w-5 bg-white`;
@@ -35,10 +41,17 @@ export default function Cursor() {
       "pointer-events-none fixed z-50 mix-blend-difference transition-all duration-400 ease-out";
     switch (shape) {
       case "account-link":
-        return `${baseCSS} rounded-full bg-transparent h-16 w-16 border-2 border-white`;
+        return `${baseCSS} rounded-full bg-transparent h-16 w-16 border-2 border-none shadow-[0_0_20px_rgba(255,255,255,1)]`;
       case "navbar-item":
-        return `${baseCSS} rounded-full h-12 bg-white/20 border border-white/40`;
+        return `${baseCSS} rounded-full h-12 bg-transparent border border-white/40 shadow-[0_0_20px_rgba(255,255,255,0.5)]`;
+      case "coding-profile-link":
+        return `${baseCSS} rounded-full w-16 h-16 bg-transparent border-2 border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.25)]`;
+      case "project-card":
+        return `${baseCSS} rounded-full w-16 h-16 bg-transparent border border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.25)]`;
+      case "clickable":
+        return `${baseCSS} rounded-full w-16 h-16 bg-transparent border-2 border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.25)]`;
       case "default":
+        return `${baseCSS} rounded-full h-12 w-12 border border-white bg-transparent`;
       default:
         return `${baseCSS} rounded-full h-12 w-12 border border-white bg-transparent`;
     }
@@ -89,7 +102,7 @@ export default function Cursor() {
 
         if (cursorAttribute === "navbar-item" && element) {
           const rect = element.getBoundingClientRect();
-          setElementWidth(rect.width + 44);
+          setElementWidth(rect.width + 64);
         } else {
           setElementWidth(0);
         }
@@ -98,7 +111,7 @@ export default function Cursor() {
         setFollowerCSS(getCompleteFollowerCSS(cursorAttribute));
       });
     },
-    { scope: cursorRef },
+    { scope: cursorRef }
   );
   return (
     <>
