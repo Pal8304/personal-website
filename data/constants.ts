@@ -25,7 +25,7 @@ export const NAV_ITEMS: NavItemProps[] = [
   },
 ];
 
-export const PORTFOLIO_TITLE = "Portfolio";
+export const PORTFOLIO_TITLE = "Palash Jhaveri";
 
 export const SOCIALS: AccountLinkProps[] = [
   {

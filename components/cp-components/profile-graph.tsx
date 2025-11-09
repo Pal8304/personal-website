@@ -1,7 +1,5 @@
-"use client";
 import Image from "next/image";
 import RatingGraph from "./rating-graph";
-import { RatingGraphClient } from "./rating-graph-client";
 
 export default function ProfileGraph({
   codingPlatformHovered,
@@ -35,8 +33,8 @@ export default function ProfileGraph({
           <div className="h-px bg-white/15 mt-2"></div>
         </div>
         {codingPlatformHovered === "Codeforces" ? (
-          <div className="relative w-full h-48">
-            Here, there will be cf graph
+          <div className="relative w-full h-48 rounded-lg overflow-hidden bg-white/5 border border-white/10 group">
+            <RatingGraph />
           </div>
         ) : (
           <div className="relative w-full h-48 rounded-lg overflow-hidden bg-white/5 border border-white/10 group">
