@@ -1,5 +1,4 @@
 "use client";
-
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -13,12 +12,11 @@ type AnimatedNameProps = {
 
 export default function AnimatedName({ name }: AnimatedNameProps) {
   const ref = useRef<HTMLDivElement>(null);
-
+  
   useGSAP(
     () => {
       const el = ref.current;
       if (!el) return;
-
       gsap.to(el, {
         duration: 2,
         ease: "power2.out",
@@ -33,9 +31,15 @@ export default function AnimatedName({ name }: AnimatedNameProps) {
     },
     { scope: ref },
   );
+  
   return (
-    <div ref={ref} className="text-8xl mt-4 text-shadow-lg/30 font-semibold">
-      {name}
+    <div className="w-full flex justify-center overflow-hidden px-4">
+      <div 
+        ref={ref} 
+        className="text-5xl md:text-6xl lg:text-8xl text-center mt-4 text-shadow-lg/30 font-semibold whitespace-nowrap"
+      >
+        {name}
+      </div>
     </div>
   );
 }

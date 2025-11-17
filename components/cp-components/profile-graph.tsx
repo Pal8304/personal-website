@@ -15,7 +15,7 @@ export default function ProfileGraph({
   return (
     <div className="pointer-events-none absolute left-[calc(50%+2rem)] top-[95%] -translate-y-1/2">
       <div
-        className="min-w-96 bg-transparent border border-white/10 rounded-xl p-4 backdrop-blur-sm 
+        className="min-w-96 xl:min-w-[28rem] bg-transparent border border-white/10 rounded-xl p-4 backdrop-blur-sm 
                     hover:border-white/20 hover:bg-white/5 
                     transition-all duration-300 ease-out
                     shadow-[0_4px_16px_rgba(255,255,255,0.05)]
@@ -42,7 +42,6 @@ export default function ProfileGraph({
               src={graphPath}
               alt={`${codingPlatformHovered} rating graph`}
               fill
-              objectFit="fill"
               className="object-cover group-hover:scale-[1.02] transition-transform duration-300"
             />
           </div>

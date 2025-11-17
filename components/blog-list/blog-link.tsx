@@ -22,7 +22,7 @@ export default function BlogLink({
           {blogtitle}
         </div>
         <div className="text-l opacity-75 mb-1">{blogsubtitle}</div>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           {blogtags.map((tag) => (
             <div
               className="blog-tag border px-2 py-0.5 rounded-lg font-light opacity-50"
@@ -33,7 +33,7 @@ export default function BlogLink({
           ))}
         </div>
       </div>
-      <div className="opacity-50">
+      <div className="flex items-start h-full opacity-50">
         {new Date(blogdate).toLocaleDateString("en-US", {
           weekday: "long",
           year: "numeric",

@@ -47,7 +47,7 @@ const fantasque_sans = FantasqueSans({
       path: "../public/fonts/FantasqueSansMono-BoldItalic.woff",
       weight: "700",
       style: "italic",
-    }
+    },
   ],
   display: "swap",
   variable: "--font-fantasque-sans",
@@ -71,10 +71,12 @@ export default function RootLayout({
       <body
         className={`${roboto_mono.className} ${roboto.variable} ${dancing_script.variable} ${fantasque_sans.variable}`}
       >
-        <div className="flex min-w-screen min-h-screen font-fantasque bg-[conic-gradient(at_bottom_right,_var(--tw-gradient-stops))] from-[#1d4ed8] via-[#1e40af] to-[#111827]">
+        <div className="flex w-screen h-screen font-fantasque bg-[conic-gradient(at_bottom_right,_var(--tw-gradient-stops))] from-[#1d4ed8] via-[#1e40af] to-[#111827]">
           <Navbar />
           {children}
-          <Cursor />
+          <div className="hidden lg:block">
+            <Cursor />
+          </div>
         </div>
       </body>
     </html>

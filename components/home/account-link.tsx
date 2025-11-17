@@ -12,7 +12,7 @@ export default function AccountLink({ externalLink, Icon }: AccountLinkProps) {
         className="p-2"
         data-cursor="account-link"
       >
-        <Icon size={32} />
+        <Icon className="w-6 h-6 lg:w-8 lg:h-8" />
       </Link>
     </AnimatedEnter>
   );
