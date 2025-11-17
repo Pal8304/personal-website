@@ -57,7 +57,7 @@ export const PROJECTS: ProjectCardProps[] = [
   {
     deployLink: "https://scheduling-algorithms-rnud.vercel.app/",
     githubLink: "https://github.com/Pal8304/Scheduling_Algorithms",
-    title: "Scheduling_Algorithms",
+    title: "Scheduling-Algorithm",
     description: "A simulator of scheduling algorithms for OS project",
     tags: ["NextJs", "Tailwind"],
   }, 

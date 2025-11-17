@@ -15,6 +15,7 @@ Projects ToDo:
 
 - [x] Make project links better
 - [x] Provide better UI to tags
+- [x] Made site more responsive ( still more to do, specifically in blog page )
 - [ ] Add deployment link instead of icon for it
 - [ ] Fetch project data from some API instead of hardcoding it here
 - [ ] Fetch github stars and forks count using github API

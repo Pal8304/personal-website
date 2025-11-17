@@ -39,9 +39,3 @@
   --font-roboto-mono: var(--font-roboto-mono);
 }
 
-@layer base {
-  * {
-    @apply cursor-none;
-  }
-}
-

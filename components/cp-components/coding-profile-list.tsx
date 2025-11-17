@@ -18,13 +18,10 @@ export default function CodingProfileList({
     () => {
       const container = containerRef.current;
       if (!container) return;
-
       const wrapper = Array.from(
-        container.querySelectorAll<HTMLElement>(".coding-link-wrapper"),
+        container.querySelectorAll<HTMLElement>(".coding-link-wrapper")
       );
-
       const tl = gsap.timeline();
-
       tl.from(wrapper, {
         autoAlpha: 0,
         y: 20,
@@ -33,19 +30,18 @@ export default function CodingProfileList({
         stagger: 0.15,
       });
     },
-    { scope: containerRef },
+    { scope: containerRef }
   );
 
   return (
-    <div ref={containerRef} className="flex flex-col gap-3">
+    <div ref={containerRef} className="flex flex-col gap-3 px-4 lg:px-0">
       {CODINGPROFILES.map((profile, index) => {
         return (
           <div
             key={index}
-            className="coding-link-wrapper relative flex items-start gap-4 min-h-36"
+            className="coding-link-wrapper relative flex items-start gap-4 min-h-28 lg:min-h-36"
           >
             <CodingProfileLink
-              key={index}
               codingPlatform={profile.codingPlatform}
               codingProfileLink={profile.codingProfileLink}
               handle={profile.handle}
@@ -56,11 +52,10 @@ export default function CodingProfileList({
               setCodingPlatformHovered={setCodingPlatformHovered}
             />
             {profile.codingPlatform === codingPlatformHovered && (
-              <div className="flex">
+              <div className="hidden lg:flex">
                 <ProfileGraph codingPlatformHovered={codingPlatformHovered} />
               </div>
             )}
-            <div className="hidden md:block flex-1" />
           </div>
         );
       })}
