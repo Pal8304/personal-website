@@ -24,8 +24,8 @@ export default async function PostPage(props: {
   if (!post) return notFound();
   // Pass the post contents to MDX
   return (
-    <div className="flex flex-col justify-center items-center w-full h-full px-4 py-20">
-      <div className="w-2/3 flex flex-col gap-2 mt-4 p-2">
+    <div className="flex flex-col justify-center items-center w-full h-full px-4 lg:px-12 py-24 overflow-scroll">
+      <div className="w-full lg:w-2/3 h-full flex flex-col gap-2 mt-4 p-2">
         <div className="text-5xl h-full">{post.title}</div>
         {/* <div className="text-2xl h-full opacity-75">{post.subtitle}</div> */}
         <div className="text-lg h-full opacity-50">
@@ -48,9 +48,9 @@ export default async function PostPage(props: {
           </div>
         )}
         {post.content && <PostBody>{post.content}</PostBody>}
+        {/* <div className="w-full border-b-2 opacity-40"></div> */}
+        {/* <BlogFooter /> */}
       </div>
-      <div className="w-full border-b-2 opacity-40"></div>
-      <BlogFooter />
     </div>
   );
 }
