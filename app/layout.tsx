@@ -4,6 +4,7 @@ import { Inter, Roboto_Mono, Roboto, Dancing_Script } from "next/font/google";
 import FantasqueSans from "next/font/local";
 import Navbar from "../components/navbar/navbar";
 import Cursor from "@/components/cursor";
+import { GoogleAnalyticsTracking } from "@/components/google-analytics-tracking";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -68,6 +69,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GoogleAnalyticsTracking />
       <body
         className={`${roboto_mono.className} ${roboto.variable} ${dancing_script.variable} ${fantasque_sans.variable}`}
       >

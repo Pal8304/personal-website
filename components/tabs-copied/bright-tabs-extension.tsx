@@ -10,7 +10,7 @@ function TitleBarComponent(brightProps: any) {
   const childProps = subProps?.length ? subProps : [brightProps];
 
   const titles: string[] = childProps.map(
-    (p: any) => p.title || p.lang || "untitled",
+    (p: any) => p.title || p.lang || "untitled"
   );
 
   return (

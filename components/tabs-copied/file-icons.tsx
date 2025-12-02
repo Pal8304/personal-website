@@ -6,7 +6,6 @@ import { VscJson } from "react-icons/vsc";
 import { BsFiletypeTxt } from "react-icons/bs";
 import { TbBrandCpp } from "react-icons/tb";
 
-/** Basic icon map — tweak sizes / colors to taste */
 export const ICON_MAP: Record<string, React.ReactNode> = {
   js: <BiLogoJavascript size={16} />,
   ts: <SiTypescript size={16} />,
@@ -16,10 +15,9 @@ export const ICON_MAP: Record<string, React.ReactNode> = {
   default: <BsFiletypeTxt size={16} />,
 };
 
-/** Return icon by filename (e.g. "Approach1.cpp") or fallback. */
 export function getIconFromTitle(
   title?: string,
-  lang?: string,
+  lang?: string
 ): React.ReactNode {
   if (!title && !lang) return ICON_MAP.default;
   if (lang) {
