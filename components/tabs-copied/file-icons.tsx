@@ -1,4 +1,3 @@
-// lib/file-icons.tsx
 import React from "react";
 import { BiLogoJavascript } from "react-icons/bi";
 import { SiTypescript, SiPython } from "react-icons/si";

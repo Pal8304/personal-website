@@ -55,8 +55,35 @@ const fantasque_sans = FantasqueSans({
 });
 
 export const metadata: Metadata = {
-  title: "Palash Jhaveri",
-  description: "Thinking of something catchy",
+  title: {
+    default: "Palash Jhaveri - Software Developer & Competitive Programmer",
+    template: "%s | Palash Jhaveri",
+  },
+  description:
+    "Portfolio of Palash Jhaveri - Software Developer, Competitive Programmer, and Tech Enthusiast. Explore my projects, blog posts, and coding achievements.",
+  keywords: [
+    "Palash Jhaveri",
+    "Software Developer",
+    "Competitive Programming",
+    "Portfolio",
+    "Web Development",
+  ],
+  authors: [{ name: "Palash Jhaveri", url: "https://github.com/Pal8304" }],
+  creator: "Palash Jhaveri",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://palj.dev",
+    siteName: "Palash Jhaveri Portfolio",
+    title: "Palash Jhaveri - Software Developer",
+    description: "Portfolio showcasing projects and blogs",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: "index, follow"
+  },
+  applicationName: "Portfolio | Palash Jhaveri",
   icons: {
     icon: "/palj.ico",
   },

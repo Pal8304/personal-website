@@ -32,9 +32,11 @@ Overall Portfolio ToDo:
 
 - [x] Add basic animations everywhere
 - [x] Make the animations better now
-- [ ] Make it more responsive
+- [x] Make it more responsive
 - [ ] Add support for dark mode toggle and handle the colors accordingly
 - [x] Add custom cursor
 - [ ] Try cursor with gsap later on
 - [x] Fix navbar transistion when changing pages
+- [x] Improve SEO ( basic ) 
+- [ ] Improve SEO using JSON-ld, Dynamic Meta Data, Third Party Scripts etc ( Refer https://www.reddit.com/r/nextjs/comments/195ikpf/nextjs_seo_complete_checklist/ )
 - [ ] Check out https://reactbits.dev/get-started/introduction in a different branch here

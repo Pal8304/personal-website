@@ -47,9 +47,8 @@ export default async function PostPage(props: {
             ))}
           </div>
         )}
-        {post.content && <PostBody>{post.content}</PostBody>}
-        {/* <div className="w-full border-b-2 opacity-40"></div> */}
-        {/* <BlogFooter /> */}
+        {post.content && <PostBody>{post.content}</PostBody>} 
+        <BlogFooter />
       </div>
     </div>
   );

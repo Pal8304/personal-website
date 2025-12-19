@@ -1,4 +1,3 @@
-// components/tabs/bright-tabs-extension.tsx
 import React from "react";
 import { Code } from "bright";
 import { TabsRoot, TabsList, TabsContent } from "./client";
